@@ -108,4 +108,5 @@ with col2:
     elif score < 80:
         st.warning("🟡 Moderate Risk. Explore regional alternatives and establish backup suppliers.")
     else:
-        st.success("✅ Low Risk. Maintain current st
+       st.success("✅ Low Risk. Maintain current strategy but monitor cost volatility.")
+
