@@ -2,7 +2,6 @@
 
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 import plotly.graph_objects as go
 from io import BytesIO
 
@@ -78,10 +77,14 @@ with col2:
     st.subheader("📊 Risk Score & Insights")
     score = calculate_resilience_score(data if isinstance(data, dict) else data.to_dict())
     risk_level = risk_level_color(score)
-    
-    st.markdown(f"<div style='padding: 1rem; border-radius: 10px; background-color: #F0F8FF;'>
-    <h2>Resilience Score: {score}/100</h2>
-    <p style='font-size: 18px;'>{risk_level}</p></div>", unsafe_allow_html=True)
+
+    html_block = f"""
+    <div style='padding: 1rem; border-radius: 10px; background-color: #F0F8FF;'>
+        <h2>Resilience Score: {score}/100</h2>
+        <p style='font-size: 18px;'>{risk_level}</p>
+    </div>
+    """
+    st.markdown(html_block, unsafe_allow_html=True)
 
     st.markdown("### 🤖 AI-Recommended Actions")
     if score < 60:
