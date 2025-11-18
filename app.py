@@ -4,11 +4,19 @@ import pandas as pd
 
 st.set_page_config(page_title="SupplySight", layout="wide")
 
+# ---- LOGO SVG (simple swirl) ----
+logo_svg = """
+<svg width="38" height="38" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#ffab00"/><path d="M32 23c-4 8-19 6-16-4 2-6 14-5 13 1" fill="none" stroke="#00c853" stroke-width="3" stroke-linecap="round"/><path d="M23 13c-2-3-8-2-7 3" fill="none" stroke="#2979ff" stroke-width="3" stroke-linecap="round"/></svg>
+"""
+
 # ---- HEADER ----
-st.markdown("""
-    <div style='text-align: center; padding: 2rem 0 1.5rem 0;'>
-        <h1 style='color: #193259; margin-bottom: .25rem;'>SupplySight Dashboard</h1>
-        <h3 style='color: #34669a; font-weight:400;'>AI-powered SME Resilience & Risk</h3>
+st.markdown(f"""
+    <div style='text-align:center; display:flex; align-items:center; justify-content:center; gap:10px; padding:2rem 0 1rem 0;'>
+        {logo_svg}
+        <div>
+            <h1 style='color:#fff; margin-bottom:.1rem; display:inline;'>SupplySight Dashboard</h1>
+            <h3 style='color:#fafafa; font-weight:400; margin-top:.25rem;'>AI-powered SME Resilience & Risk</h3>
+        </div>
     </div>
 """, unsafe_allow_html=True)
 
@@ -79,7 +87,7 @@ with mid2:
 with mid3:
     st.markdown("#### Mitigation Plan")
     st.markdown("""
-    <div style='background:#fff3cd; border-radius:10px; padding:1.2rem; border:1px solid #ffe066;'>
+    <div style='background:#fff3cd; border-radius:10px; padding:1.2rem; border:1px solid #ffe066; color:#111;'>
         <b>Objective:</b> Reduce single-source dependency<br>
         <b>Timeline:</b> 3–6 months<br>
         <b>Owner:</b> Supply Chain Manager<br>
@@ -90,8 +98,8 @@ with mid3:
 st.markdown("---")
 
 # ---- BOTTOM: Upload Section ----
-st.markdown("### Upload Your Data")
-st.info("Upload your .csv or .xlsx file below. [Download Sample Template](https://yourdomain.com/sample_template.xlsx)")
+st.markdown("### <span style='color:#fff;'>Upload Your Data</span>", unsafe_allow_html=True)
+st.markdown("<span style='color:#7ecfff; font-size:1rem;'>Upload your .csv or .xlsx file below. <a href='https://yourdomain.com/sample_template.xlsx' style='color:#f6c542; text-decoration:underline;'>Download Sample Template</a></span>", unsafe_allow_html=True)
 st.file_uploader("Choose file", type=['csv','xlsx'])
 
 st.caption("Beta dashboard UI preview — layout matches approved mockup. Replace demo values with calculations after layout approval.")
