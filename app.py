@@ -4,29 +4,17 @@ import pandas as pd
 
 st.set_page_config(page_title="SupplySight", layout="wide")
 
-# ---- HEADER with LOGO and FIXED COLOR ----
-logo_svg = """
-<svg width="36" height="36" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="45" fill="#f6c542" />
-  <path d="M30 50 A20 20 0 0 1 70 50" stroke="#228be6" stroke-width="10" fill="none"/>
-  <circle cx="50" cy="50" r="5" fill="#43a047"/>
-</svg>
-"""
-
-st.markdown(f"""
+# ---- HEADER ----
+st.markdown("""
     <div style='text-align: center; padding: 2rem 0 1.5rem 0;'>
-        <div style='display: flex; justify-content: center; align-items: center; gap: 1rem;'>
-            {logo_svg}
-            <div>
-                <h1 style='color: white; margin-bottom: .25rem;'>SupplySight Dashboard</h1>
-                <h3 style='color: #dddddd; font-weight:400;'>AI-powered SME Resilience & Risk</h3>
-            </div>
-        </div>
+        <img src="https://img.icons8.com/fluency/48/insight.png" alt="SupplySight Logo" style='vertical-align: middle; margin-right: 10px;'/>
+        <h1 style='color: #f1f1f1; display: inline;'>SupplySight Dashboard</h1>
+        <h3 style='color: #d0d0d0; font-weight:400; margin-top: 0.5rem;'>AI-powered SME Resilience & Risk</h3>
     </div>
 """, unsafe_allow_html=True)
 
 # ---- TOP ROW ----
-col1, col2, col3 = st.columns([1.1,1,1])
+col1, col2, col3 = st.columns([1.1, 1, 1])
 
 with col1:
     st.markdown("#### Resilience Score")
@@ -66,13 +54,13 @@ with col3:
 st.markdown("---")
 
 # ---- MID ROW ----
-mid1, mid2, mid3 = st.columns([1,1,1])
+mid1, mid2, mid3 = st.columns([1, 1, 1])
 
 with mid1:
     st.markdown("#### Risk Insights")
     fig2 = go.Figure(go.Bar(
-        x=['Jan','Feb','Mar','Apr','May','Jun'],
-        y=[2,4,6,8,10,14],
+        x=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        y=[2, 4, 6, 8, 10, 14],
         marker_color="#228be6"
     ))
     fig2.update_layout(height=200, margin=dict(l=10, r=10, t=40, b=10))
@@ -82,17 +70,17 @@ with mid2:
     st.markdown("#### Supplier Diversification")
     fig3 = go.Figure(go.Pie(
         values=[40, 35, 25],
-        labels=['Asia','Europe','Americas'],
+        labels=['Asia', 'Europe', 'Americas'],
         hole=0.6
     ))
-    fig3.update_traces(marker=dict(colors=['#43a047','#f6c542','#228be6']))
-    fig3.update_layout(showlegend=True, height=200, margin=dict(t=30,b=10,l=10,r=10))
+    fig3.update_traces(marker=dict(colors=['#43a047', '#f6c542', '#228be6']))
+    fig3.update_layout(showlegend=True, height=200, margin=dict(t=30, b=10, l=10, r=10))
     st.plotly_chart(fig3, use_container_width=True)
 
 with mid3:
     st.markdown("#### Mitigation Plan")
     st.markdown("""
-    <div style='background:#fff3cd; color:#333; border-radius:10px; padding:1.2rem; border:1px solid #ffe066;'>
+    <div style='background:#fff3cd; color:#111; border-radius:10px; padding:1.2rem; border:1px solid #ffe066;'>
         <b>Objective:</b> Reduce single-source dependency<br>
         <b>Timeline:</b> 3–6 months<br>
         <b>Owner:</b> Supply Chain Manager<br>
@@ -104,7 +92,12 @@ st.markdown("---")
 
 # ---- BOTTOM: Upload Section ----
 st.markdown("### Upload Your Data")
-st.markdown("<span style='color: #dddddd;'>Upload your .csv or .xlsx file below. <a href='#' style='color: #4da6ff;'>Download Sample Template</a></span>", unsafe_allow_html=True)
-st.file_uploader("Choose file", type=['csv','xlsx'])
+st.markdown("""
+<div style='color:#ccc; font-size:0.95rem;'>
+    Upload your .csv or .xlsx file below. <a href='https://yourdomain.com/sample_template.xlsx' style='color:#91caff;'>Download Sample Template</a>
+</div>
+""", unsafe_allow_html=True)
+
+st.file_uploader("Choose file", type=['csv', 'xlsx'])
 
 st.caption("Beta dashboard UI preview — layout matches approved mockup. Replace demo values with calculations after layout approval.")
