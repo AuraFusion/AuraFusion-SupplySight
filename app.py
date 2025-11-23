@@ -7,8 +7,8 @@ st.set_page_config(page_title="SupplySight", layout="wide")
 # ---- HEADER ----
 from PIL import Image
 
-# Load logo image
-logo = Image.open("SupplySight Logo.png")
+# Load logo image from uploaded file
+logo = Image.open("/mnt/data/a8321e5f-89f0-4660-b012-9a969b7e202d.png")  # Path from your upload
 
 # Display the header
 st.markdown("""
@@ -20,7 +20,6 @@ st.markdown("""
         <h3 style='color: #bbbbbb; font-weight:400;'>AI-powered SME Resilience & Risk</h3>
     </div>
 """, unsafe_allow_html=True)
-
 # ---- TOP ROW ----
 col1, col2, col3 = st.columns([1.1, 1, 1])
 
