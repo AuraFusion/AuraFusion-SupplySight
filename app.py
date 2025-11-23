@@ -91,6 +91,8 @@ else:
 
 st.markdown("### Dashboard Preview")
 st.image("ee770c53-8977-4475-b273-4b043ffbd850.png", caption="This is what your dashboard will look like after upload", use_column_width=True)
+st.markdown("<div style='color:#ffffff; font-size:1.1rem; font-weight:600;'>Please upload a file to view dynamic metrics.</div>", unsafe_allow_html=True)
+
 
 
 
