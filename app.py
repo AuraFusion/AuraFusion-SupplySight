@@ -87,12 +87,9 @@ if uploaded_file:
     st.markdown("---")
     st.dataframe(df.head())
 else:
-    st.markdown("""
-<div style='background-color: #ffffff; color: #2e3b4e; display: inline-block; padding: 8px 14px; border-radius: 6px; font-size: 1.5rem;'> </div>""", unsafe_allow_html=True)
 
 
-
-st.markdown("### Dashboard Preview")
+st.markdown("### Dashboard Preview (Please upload a file to view dynamic metrics)")
 st.image("https://github.com/AuraFusion/supplysight-assets/blob/main/Final%20Dashboard%20Sample.png?raw=true")
 
 
