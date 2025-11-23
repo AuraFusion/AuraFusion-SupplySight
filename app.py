@@ -9,14 +9,12 @@ st.set_page_config(page_title="SupplySight", layout="wide")
 import streamlit as st
 from PIL import Image
 
-# Load the logo from local path
-logo_path = "a8321e5f-89f0-4660-b012-9a969b7e202d.png"
-logo = Image.open(logo_path)
+st.set_page_config(page_title="SupplySight", layout="wide")
 
-# Display the logo
+# ---- HEADER WITH LOGO ----
+logo = Image.open("a8321e5f-89f0-4660-b012-9a969b7e202d.png")  # Ensure this file is in the app's root directory
 st.image(logo, width=60)
 
-# Header text
 st.markdown("""
     <div style='text-align: center; padding: 1rem 0 0 0;'>
         <h1 style='color: #ffffff; margin-bottom: .25rem;'>SupplySight Dashboard</h1>
