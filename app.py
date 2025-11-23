@@ -90,7 +90,8 @@ else:
     st.info("Please upload a file to view dynamic metrics.")
 
 st.markdown("### Dashboard Preview")
-st.image("/mnt/data/ee770c53-8977-4475-b273-4b043ffbd850.png", caption="This is what your dashboard will look like after upload", use_column_width=True)
+st.image("ee770c53-8977-4475-b273-4b043ffbd850.png", caption="This is what your dashboard will look like after upload", use_column_width=True)
+
 
 
 
