@@ -5,7 +5,6 @@ import pandas as pd
 st.set_page_config(page_title="SupplySight", layout="wide")
 
 # ---- HEADER ----
-
 st.markdown("""
     <div style='text-align: center; padding: 0; margin: 0; line-height: 1;'>
         <img src='https://raw.githubusercontent.com/AuraFusion/supplysight-assets/main/logo.png' alt='SupplySight Logo' width='300' style='display: block; margin: 0 auto -20px auto;'/>
@@ -13,7 +12,6 @@ st.markdown("""
         <h3 style='color: #bbbbbb; font-weight:400; margin: 0; padding: 0;'>AI-powered SME Resilience & Risk</h3>
     </div>
 """, unsafe_allow_html=True)
-
 # ---- TOP ROW ----
 
 col1, col2, col3 = st.columns([1.1, 1, 1])
