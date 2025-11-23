@@ -96,7 +96,7 @@ st.markdown("---")
 st.markdown("### Upload Your Data")
 st.markdown("""
 <div style='color:#ccc; font-size:0.95rem;'>
-    Upload your .csv or .xlsx file below. <a href='https://yourdomain.com/sample_template.xlsx' style='color:#91caff;'>Download Sample Template</a>
+    Upload your .csv or .xlsx file below. <a href='https://aurafusion-supplysight.streamlit.app/SupplySight_Sample_Template.xlsx' style='color:#91caff;'>Download Sample Template</a>
 </div>
 """, unsafe_allow_html=True)
 
