@@ -5,13 +5,22 @@ import pandas as pd
 st.set_page_config(page_title="SupplySight", layout="wide")
 
 # ---- HEADER ----
+from PIL import Image
+
+# Load logo image
+logo = Image.open("SupplySight Logo.png")
+
+# Display the header
 st.markdown("""
     <div style='text-align: center; padding: 1.5rem 0 1rem 0;'>
-        <img src='https://aurafusion-supplysight.streamlit.app/db67f330-dd5e-4b67-92fd-0657cfd9e70d.png' alt='SupplySight Logo' width='60' style='margin-bottom:10px;'/>
+""", unsafe_allow_html=True)
+st.image(logo, width=60)
+st.markdown("""
         <h1 style='color: #ffffff; margin-bottom: .25rem;'>SupplySight Dashboard</h1>
         <h3 style='color: #bbbbbb; font-weight:400;'>AI-powered SME Resilience & Risk</h3>
     </div>
 """, unsafe_allow_html=True)
+
 # ---- TOP ROW ----
 col1, col2, col3 = st.columns([1.1, 1, 1])
 
