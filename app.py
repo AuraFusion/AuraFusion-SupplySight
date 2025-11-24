@@ -20,7 +20,7 @@ uploaded_file = st.file_uploader("Choose a .csv or .xlsx file", type=['csv', 'xl
 st.markdown("""
 <div style='color:#ccc; font-size:0.95rem;'>
     Upload your .csv or .xlsx file with columns: Supplier, Country, Spend, Cost_Per_Unit, Historical_Costs<br>
-    <a href='/mnt/data/sample_template.xlsx' style='color:#91caff;'>Download Sample Template</a>
+    <a href='/mnt/data/945104ef-ae7f-4f41-bb2e-7e2b1d287db3.xlsx' download style='color:#91caff;'>Download Sample Template</a>
 </div>
 """, unsafe_allow_html=True)
 st.markdown("---")
