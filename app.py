@@ -93,6 +93,15 @@ else:
     st.markdown("### Dashboard Preview (Please upload a file above to view dynamic metrics)")
     st.image("https://github.com/AuraFusion/supplysight-assets/blob/main/Final%20Dashboard%20Sample.png?raw=true")
 
+    st.markdown("### 📊 How Metrics Are Calculated")
+st.markdown("""
+- **Resilience Score** = `100 - Supplier Concentration (%) - (Avg. Cost Volatility × 10)`
+- **Supplier Concentration** = `% of spend on top supplier`
+- **Geographic Exposure** = `Count of unique countries`
+- **Cost Volatility** = `Standard deviation of historical costs (e.g. Jan;Feb;Mar)`
+- **Supply Risk** = `High if top supplier > 50% or volatility > 0.5`
+""")
+
     st.markdown("### 📬 Share Your Feedback")
     feedback = st.text_area("We’d love to hear your thoughts. What’s working? What’s confusing?")
 
