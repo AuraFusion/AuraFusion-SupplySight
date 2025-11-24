@@ -93,8 +93,8 @@ else:
     st.markdown("### Dashboard Preview (Please upload a file above to view dynamic metrics)")
     st.image("https://github.com/AuraFusion/supplysight-assets/blob/main/Final%20Dashboard%20Sample.png?raw=true")
 
- st.markdown("### 📬 Share Your Feedback")
-feedback = st.text_area("We’d love to hear your thoughts. What’s working? What’s confusing?")
+    st.markdown("### 📬 Share Your Feedback")
+    feedback = st.text_area("We’d love to hear your thoughts. What’s working? What’s confusing?")
 
 if st.button("Submit Feedback"):
     st.success("✅ Thanks for your feedback! We'll review it shortly.")
