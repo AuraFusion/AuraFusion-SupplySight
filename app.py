@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
 
-st.set_page_config(page_title="SupplySight", layout="wide")
+st.set_page_config(page_title="Sourcelytics", layout="wide")
 
 # ---- HEADER ----
 st.markdown("""
