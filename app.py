@@ -107,3 +107,15 @@ else:
 
 if st.button("Submit Feedback"):
     st.success("✅ Thanks for your feedback! We'll review it shortly.")
+
+st.markdown("### 📜 Legal Notice")
+st.markdown("---")
+st.markdown("""
+<div style='font-size: 0.85rem; color: #aaa; padding: 1rem 0;'>
+    <strong>Disclaimer:</strong> This is a non-commercial, research-focused prototype developed solely for academic and public benefit purposes. It is part of a demonstration for showcasing technical contributions to the field of supply chain resilience and AI-driven risk analytics.
+    <br><br>
+    This application <strong>does not offer paid services</strong> and <strong>is not affiliated with any business entity</strong>. The developer is an F‑1 visa student and is not engaged in commercial activity. Data uploaded is processed temporarily and not stored.
+    <br><br>
+    The tool is part of a portfolio supporting a U.S. EB‑1A / EB‑2 NIW petition for exceptional ability and national interest contribution. No income is derived from this tool.
+</div>
+""", unsafe_allow_html=True)
