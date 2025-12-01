@@ -5,6 +5,12 @@ import numpy as np
 
 st.set_page_config(page_title="ResiliLytics", layout="wide")
 
+st.markdown("""
+<div style='background: #002b36; padding: 0.5rem 1rem; border-radius: 6px; color: #91caff; font-size: 0.85rem; margin-bottom: 1rem;'>
+🔎 <strong>Note:</strong> This tool is part of a non-commercial academic research project. See disclaimer below.
+</div>
+""", unsafe_allow_html=True)
+
 # ---- HEADER ----
 st.markdown("""
     <div style='text-align: center; padding: 0.5rem 0 0rem 0;'>
