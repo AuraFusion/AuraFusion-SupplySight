@@ -3,22 +3,15 @@ import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
 
-st.set_page_config(page_title="SupplySight", layout="wide")
+st.set_page_config(page_title="ResiliLytics", layout="wide")
 
 # ---- HEADER ----
 st.markdown("""
     <div style='text-align: center; padding: 0.5rem 0 0rem 0;'>
-        <img src='https://raw.githubusercontent.com/AuraFusion/supplysight-assets/main/logo.png' alt='SupplySight Logo' width='360' style='margin-bottom:-150px;'/>
-        <h1 style='color: #ffffff; margin-bottom: .2rem; margin-top: -0.2rem;'>SupplySight Dashboard</h1>
-        <h3 style='color: #bbbbbb; font-weight:400; margin-top: -0.5rem;'>AI-powered SME Resilience & Risk</h3>
+        <img src='https://raw.githubusercontent.com/AuraFusion/supplysight-assets/main/logo.png' alt='ResiliLytics Logo' width='360' style='margin-bottom:-150px;'/>
+        <h1 style='color: #ffffff; margin-bottom: .2rem; margin-top: -0.2rem;'>ResiliLytics Dashboard</h1>
+        <h3 style='color: #bbbbbb; font-weight:400; margin-top: -0.5rem;'>SME Resilience + AI + Risk-to-Action</h3>
     </div>
-""", unsafe_allow_html=True)
-
-# ---- NOTICE ----
-st.markdown("""
-<div style='background: #002b36; padding: 0.5rem 1rem; border-radius: 6px; color: #91caff; font-size: 0.85rem; margin-bottom: 1rem;'>
-🔎 <strong>Note:</strong> This tool is part of a non-commercial academic research project. See disclaimer below.
-</div>
 """, unsafe_allow_html=True)
 
 # ---- UPLOAD SECTION ----
@@ -93,6 +86,7 @@ if uploaded_file:
 
     st.markdown("---")
     st.dataframe(df.head())
+
 else:
     st.markdown("### 📽️ Need Help?")
     st.markdown("""If you're unsure how to use the dashboard, watch our quick <a href='https://www.youtube.com/watch?v=YOUR_VIDEO_ID' target='_blank' style='color:#91caff;'>3-minute tutorial</a>.""", unsafe_allow_html=True)
@@ -106,23 +100,10 @@ else:
     - **Supplier Concentration** = `% of spend on top supplier`
     - **Geographic Exposure** = `Count of unique countries`
     - **Cost Volatility** = `Standard deviation of historical costs (e.g. Jan;Feb;Mar)`
-    - **Supply Risk** = `High if top supplier > 50% or volatility > 0.5`
-    """)
+    - **Supply Risk** = `High if top supplier > 50% or volatility > 0.5`""")
 
     st.markdown("### 📬 Share Your Feedback")
     feedback = st.text_area("We’d love to hear your thoughts. What’s working? What’s confusing?")
 
 if st.button("Submit Feedback"):
     st.success("✅ Thanks for your feedback! We'll review it shortly.")
-
-# ---- FOOTER DISCLAIMER ----
-st.markdown("---")
-st.markdown("""
-<div style='font-size: 0.85rem; color: #aaa; padding: 1rem 0;'>
-    <strong>Disclaimer:</strong> This is a non-commercial, research-focused prototype developed solely for academic and public benefit purposes. It is part of a demonstration for showcasing technical contributions to the field of supply chain resilience and AI-driven risk analytics.
-    <br><br>
-    This application <strong>does not offer paid services</strong> and <strong>is not affiliated with any business entity</strong>. The developer is an F‑1 visa student and is not engaged in commercial activity. Data uploaded is processed temporarily and not stored.
-    <br><br>
-    The tool is part of a portfolio supporting a U.S. EB‑1A / EB‑2 NIW petition for exceptional ability and national interest contribution. No income is derived from this tool.
-</div>
-""", unsafe_allow_html=True)
