@@ -18,7 +18,7 @@ with tab1:
     st.markdown("### Sourcing Intelligence for Resilient Supply Chains")
 
     st.markdown("""
-    ResiliLytics is a next-generation platform designed to help **Small and Medium Enterprises (SMEs)** monitor and improve supply chain resilience using intelligent risk-to-action insights.
+    ResiliLytics is a **free** next-generation platform designed to help **Small and Medium Enterprises (SMEs)** monitor and improve supply chain resilience using intelligent risk-to-action insights.
 
     Powered by data and guided by insight, ResiliLytics:
     - Analyzes supplier risk exposure.
