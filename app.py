@@ -148,6 +148,46 @@ with tab3:
             ">Send</button>
         </form>
     '''
+import streamlit as st
+import requests
+
+def render_contact_section():
+    st.markdown("## 📬 Contact Us")
+    st.write("Have feedback, suggestions, or want to collaborate? Fill out the form below.")
+
+    with st.form(key="contact_form"):
+        email = st.text_input("Your email", placeholder="you@example.com")
+        message = st.text_area("Your message", height=150, placeholder="Write your message here...")
+
+        # Honeypot field (hidden via CSS)
+        honeypot = st.text_input("Leave this empty", value="", key="gotcha")
+
+        submit_button = st.form_submit_button(label="Send")
+
+        if submit_button:
+            if honeypot:  # If honeypot is filled, likely a bot
+                st.warning("Spam detected. Please try again.")
+            elif not email or not message:
+                st.error("Please fill out both email and message.")
+            else:
+                # Submit to Formspree
+                formspree_url = "https://formspree.io/f/xrbnaeqd"
+                response = requests.post(
+                    formspree_url,
+                    data={
+                        "email": email,
+                        "message": message,
+                        "_gotcha": honeypot  # Formspree-compatible spam trap
+                    },
+                    headers={"Accept": "application/json"}
+                )
+
+                if response.status_code == 200:
+                    st.success("✅ Message sent successfully! We'll get back to you soon.")
+                else:
+                    st.error("❌ Oops! Something went wrong. Please try again later.")
+
+# Call this function where needed in your Streamlit page routing
 
     st.markdown(contact_form, unsafe_allow_html=True)
 
