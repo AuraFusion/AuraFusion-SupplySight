@@ -2,7 +2,11 @@
 
 **ResiliLytics** is an AI-powered dashboard that helps small and medium-sized enterprises (SMEs) evaluate, visualize, and strengthen their supply chain resilience — using minimal data inputs.
 
-This is a **free beta pilot** version created to support international founders (e.g. EB1A, EB2-NIW eligibility) with innovation, impact, and scalable benefit to the U.S. economy.
+Powered by data and guided by insight, ResiliLytics:
+
+Analyzes supplier risk exposure.
+Recommends mitigation strategies.
+Translates supply chain complexity into clear, actionable plans.
 
 ---
 
