@@ -61,7 +61,7 @@ Download the file and use it as a guide:
 
 ## 👩🏽‍💼 Use Case
 
-This pilot app supports a real-world EB2-NIW/EB1A immigration case for a student founder on an F1 visa. It showcases:
+This pilot app developed in support of ongoing academic and professional research on improving SME supply-chain resilience through intelligent systems.
 
 - Originality and innovation
 - National interest utility
