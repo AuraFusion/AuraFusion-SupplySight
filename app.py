@@ -134,3 +134,23 @@ with tab2:
         st.markdown("<small>Replace demo values with calculations after approval.</small>", unsafe_allow_html=True)
     else:
         st.info("📂 Upload your dataset above to begin.")
+
+tab1, tab2, tab3 = st.tabs(["🏠 Home", "📊 Dashboard", "📬 Contact"])
+
+# ---- CONTACT TAB ----
+with tab3:
+    st.markdown("## 📫 Contact Us")
+    st.markdown("Fill out the form below. We'll get back to you as soon as possible.")
+
+    contact_form = """
+    <form action="https://formspree.io/f/mnqeygkd" method="POST">
+        <label for="name">Your Name</label><br>
+        <input type="text" name="name" required style="width:100%;"><br><br>
+        <label for="email">Your Email</label><br>
+        <input type="email" name="_replyto" required style="width:100%;"><br><br>
+        <label for="message">Your Message</label><br>
+        <textarea name="message" rows="5" style="width:100%;" required></textarea><br><br>
+        <button type="submit">Send</button>
+    </form>
+    """
+    st.markdown(contact_form, unsafe_allow_html=True)
