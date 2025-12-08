@@ -100,6 +100,7 @@ st.markdown("""
 
 </div>
 """, unsafe_allow_html=True)
+
 # ---- PAGE: DASHBOARD ----
 if page == "Dashboard":
     st.markdown("### Upload Your Data")
