@@ -155,14 +155,31 @@ if page == "Dashboard":
         st.image("https://github.com/ResiliLytics/ResiliLytics-assets/blob/b553fe3aa11e13bd72d77789970bc3bb3cc08147/Final%20Dashboard%20Sample.png?raw=true")
 
 # ---- PAGE: ABOUT ----
-import streamlit as st
-
-st.markdown("## 📘 About ResiliLytics")
-st.markdown("""
+ResiliLytics Dashboard
+Sourcing Intelligence for Resilient Supply Chains
 ResiliLytics is a free next-generation platform designed to help Small and Medium Enterprises (SMEs) monitor and improve supply chain resilience using intelligent risk-to-action insights.
 
-[**Read more →**](About)
-""")
+Powered by data and guided by insight, ResiliLytics:
+
+Analyzes supplier risk exposure.
+Recommends mitigation strategies.
+Translates supply chain complexity into clear, actionable plans.
+🧠 What Makes It Unique?
+ResiliLytics brings together:
+
+📦 Supply chain analytics
+⚠️ Risk classification
+🤖 AI-assisted insights
+🎯 Decision-ready recommendations
+All in one simple, accessible tool — created for real-world SME challenges.
+
+🧪 Original Contribution
+ResiliLytics introduces a novel approach to:
+
+Supply chain visualization.
+Dynamic diversification metrics.
+End-to-end data-to-action transformation — not previously available in one open-access interface.
+The platform is developed in support of ongoing academic and professional research on improving SME supply-chain resilience through intelligent systems.
 # ---- PAGE: CONTACT ----
 elif page == "Contact":
     st.markdown("### 📬 Contact Us")
