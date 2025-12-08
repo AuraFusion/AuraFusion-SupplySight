@@ -187,8 +187,9 @@ with st.expander("Read full description"):
     """)
 
 # ---- PAGE: CONTACT ----
+
 elif page == "Contact":
-    st.markdown("## 📬 Contact Us")
+    st.markdown("## Contact Us")
     st.markdown("Have feedback or want to collaborate? Fill out the form below.")
     
     contact_form = """
