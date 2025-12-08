@@ -5,33 +5,44 @@ import plotly.graph_objects as go
 
 st.markdown("""
 <style>
-@keyframes scroll-left {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-.scrolling-banner {
-  background: #004d60;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+.marquee-container {
+  width: 100%;
   overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  background-color: #013440;  /* Deep teal background */
+  color: #f4f4f4;              /* Soft white text */
+  font-size: 0.88rem;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 0.4rem 1rem;
+  border-bottom: 2px solid #0ff;
 }
 
-.scrolling-text {
+.marquee-text {
   display: inline-block;
-  color: #e5f9ff;
-  font-size: 0.95rem;
-  font-weight: 500;
-  animation: scroll-left 18s linear infinite;
+  padding-left: 100%;
+  animation: scroll-left 20s linear infinite;
+  white-space: nowrap;
+}
+
+.marquee-container:hover .marquee-text {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 </style>
 
-<div class="scrolling-banner">
-  <div class="scrolling-text">
-    🔎 Note: This tool is part of a non‑commercial academic research project. See disclaimer below.
+<div class="marquee-container">
+  <div class="marquee-text">
+    🔎 Note: This tool is part of a non-commercial academic research project. See disclaimer below.
   </div>
 </div>
 """, unsafe_allow_html=True)
