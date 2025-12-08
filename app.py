@@ -5,48 +5,31 @@ import plotly.graph_objects as go
 
 st.markdown("""
 <style>
-/* Remove default page padding so content spans full width */
-.block-container {
-    padding-left: 0rem !important;
-    padding-right: 0rem !important;
-    margin-left: 0rem !important;
-    margin-right: 0rem !important;
-}
-
-/* Optional: full‑width for markdown/image containers */
-[data-testid="stMarkdownContainer"] {
-    width: 100% !important;
-}
-
-/* Your existing scrolling banner CSS */
 @keyframes scroll-left {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
-}
-.scrolling-banner {
-  width: 100%;
-  background: #003f50;
+
+.scrolling-banner 
+  background: #004d60;
   padding: 0.5rem 1rem;
+  border-radius: 6px;
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
   margin-bottom: 1rem;
-}
-.scrolling-text {
+
+.scrolling-text 
   display: inline-block;
-  color: #ffffff;
-  font-size: 0.88rem;
-  font-weight: bold;
-  animation: scroll-left 20s linear infinite;
-}
-.scrolling-banner:hover .scrolling-text {
-  animation-play-state: paused;
-}
+  color: #e5f9ff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  animation: scroll-left 18s linear infinite;
+
 </style>
 
 <div class="scrolling-banner">
   <div class="scrolling-text">
-    🔎 Note: This tool is part of a non-commercial academic research project. See disclaimer below.
+    🔎 Note: This tool is part of a non‑commercial academic research project. See disclaimer below.
   </div>
 </div>
 """, unsafe_allow_html=True)
@@ -173,9 +156,10 @@ st.markdown("""
 <div style='font-size: 0.85rem; color: #aaa; padding: 1rem 0;'>
     <strong>Disclaimer:</strong> This is a non-commercial, research-focused prototype developed solely for academic and public benefit purposes. It is part of a demonstration for showcasing technical contributions to the field of supply chain resilience and AI-driven risk analytics.
     <br><br>
-    This application <strong>does not offer paid services</strong> and <strong>is not affiliated with any business entity</strong>. The developer is an F‑1 visa student and is not engaged in commercial activity. Data uploaded is processed temporarily and not stored.
+    This application <strong>does not offer paid services</strong> and <strong>is not affiliated with any business entity</strong>. The developer is not engaged in commercial activity. Data uploaded is processed temporarily and not stored.
     <br><br>
      No income is derived from this tool.
 </div>
 """, unsafe_allow_html=True)
+
 
