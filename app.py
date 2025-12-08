@@ -117,17 +117,6 @@ with tab1:
         st.markdown("---")
         st.dataframe(df.head())
 
-    else:
-        st.image("https://github.com/ResiliLytics/ResiliLytics-assets/blob/b553fe3aa11e13bd72d77789970bc3bb3cc08147/Final%20Dashboard%20Sample.png?raw=true")
-        st.markdown("### 📊 How Metrics Are Calculated")
-        st.markdown("""
-        - **Resilience Score** = `100 - Supplier Concentration (%) - (Avg. Cost Volatility × 10)`
-        - **Supplier Concentration** = `% of spend on top supplier`
-        - **Geographic Exposure** = `Count of unique countries`
-        - **Cost Volatility** = `Standard deviation of historical costs (e.g. Jan;Feb;Mar)`
-        - **Supply Risk** = `High if top supplier > 50% or volatility > 0.5`
-        """)
-
 # --------------- TAB 2: About ---------------
 with tab2:
     st.markdown("## ℹ️ About ResiliLytics")
@@ -169,12 +158,23 @@ with tab3:
     st.markdown(contact_form, unsafe_allow_html=True)
 
 # ---- LEGAL DISCLAIMER ----
-st.markdown("### 📜 Legal Notice")
-st.markdown("---")
 st.markdown("""
-<div style='font-size: 0.85rem; color: #aaa; padding: 1rem 0;'>
-    <strong>Disclaimer:</strong> This is a non-commercial, research-focused prototype developed solely for academic and public benefit purposes. It is part of a demonstration for showcasing technical contributions to the field of supply chain resilience and AI-driven risk analytics.
-    <br><br>
-    This application <strong>does not offer paid services</strong> and <strong>is not affiliated with any business entity</strong>. The developer is not engaged in commercial activity. Data uploaded is processed temporarily and not stored.
+<hr style='margin-top: 3rem; margin-bottom: 1rem;'>
+
+<div style='background-color: #121212; padding: 1.5rem 2rem; border-radius: 12px; border: 1px solid #333;'>
+
+<h3 style='color:#f7c948; font-size: 1.5rem; margin-bottom: 1rem;'>📜 Legal Notice</h3>
+
+<p style='color: #ddd; font-size: 0.95rem; line-height: 1.6;'>
+<strong>Disclaimer:</strong> This is a non-commercial, research-focused prototype developed solely for academic and public benefit purposes.
+It is part of a demonstration for showcasing technical contributions to the field of supply chain resilience and AI-driven risk analytics.
+</p>
+
+<p style='color: #ddd; font-size: 0.95rem; line-height: 1.6;'>
+This application <strong>does not offer paid services</strong> and <strong>is not affiliated with any business entity</strong>. The developer is not engaged in commercial activity.
+Data uploaded is processed temporarily and not stored.
+</p>
+
 </div>
 """, unsafe_allow_html=True)
+
