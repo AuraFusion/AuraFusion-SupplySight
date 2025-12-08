@@ -167,13 +167,13 @@ Translates supply chain complexity into clear, actionable plans.
 What Makes It Unique?
 ResiliLytics brings together:
 
-📦 Supply chain analytics
-⚠️ Risk classification
-🤖 AI-assisted insights
-🎯 Decision-ready recommendations
+* Supply chain analytics
+* Risk classification
+* AI-assisted insights
+* Decision-ready recommendations
 All in one simple, accessible tool — created for real-world SME challenges.
 
-🧪 Original Contribution
+**Original Contribution**
 ResiliLytics introduces a novel approach to:
 
 Supply chain visualization.
