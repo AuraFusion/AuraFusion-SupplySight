@@ -171,7 +171,7 @@ ResiliLytics brings together:
 * Risk classification
 * AI-assisted insights
 * Decision-ready recommendations
-All in one simple, accessible tool — created for real-world SME challenges.
+All in one simple, accessible tool created for real-world SME challenges.
 
 **Original Contribution**
 ResiliLytics introduces a novel approach to:
