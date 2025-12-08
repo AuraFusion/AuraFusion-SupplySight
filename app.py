@@ -5,33 +5,48 @@ import plotly.graph_objects as go
 
 st.markdown("""
 <style>
+/* Remove default page padding so content spans full width */
+.block-container {
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+}
+
+/* Optional: full‑width for markdown/image containers */
+[data-testid="stMarkdownContainer"] {
+    width: 100% !important;
+}
+
+/* Your existing scrolling banner CSS */
 @keyframes scroll-left {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
-
 .scrolling-banner {
-  background: #004d60;
+  width: 100%;
+  background: #003f50;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
   margin-bottom: 1rem;
 }
-
 .scrolling-text {
   display: inline-block;
-  color: #e5f9ff;
-  font-size: 0.95rem;
-  font-weight: 500;
-  animation: scroll-left 18s linear infinite;
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: bold;
+  animation: scroll-left 20s linear infinite;
+}
+.scrolling-banner:hover .scrolling-text {
+  animation-play-state: paused;
 }
 </style>
 
 <div class="scrolling-banner">
   <div class="scrolling-text">
-    🔎 Note: This tool is part of a non‑commercial academic research project. See disclaimer below.
+    🔎 Note: This tool is part of a non-commercial academic research project. See disclaimer below.
   </div>
 </div>
 """, unsafe_allow_html=True)
