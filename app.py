@@ -8,9 +8,8 @@ st.markdown("""
 @keyframes scroll-left {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
-}
 
-.scrolling-banner {
+.scrolling-banner 
   background: #004d60;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -18,15 +17,14 @@ st.markdown("""
   white-space: nowrap;
   box-sizing: border-box;
   margin-bottom: 1rem;
-}
 
-.scrolling-text {
+.scrolling-text 
   display: inline-block;
   color: #e5f9ff;
   font-size: 0.95rem;
   font-weight: 500;
   animation: scroll-left 18s linear infinite;
-}
+
 </style>
 
 <div class="scrolling-banner">
