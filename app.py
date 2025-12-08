@@ -5,6 +5,12 @@ import plotly.graph_objects as go
 
 st.set_page_config(page_title="ResiliLytics", layout="wide")
 
+st.markdown("""
+<div style='background: #002b36; padding: 0.5rem 1rem; border-radius: 6px; color: #91caff; font-size: 0.85rem; margin-bottom: 1rem;'>
+🔎 <strong>Note:</strong> This tool is part of a non-commercial academic research project. See disclaimer below.
+</div>
+""", unsafe_allow_html=True)
+
 # ---- SIDEBAR ----
 st.sidebar.title("📊 ResiliLytics")
 page = st.sidebar.radio("Navigate", ["Dashboard", "About", "Contact"])
@@ -16,12 +22,6 @@ st.markdown("""
         <h1 style='color: #ffffff; margin-bottom: .2rem; margin-top: -0.2rem;'>ResiliLytics Dashboard</h1>
         <h3 style='color: #bbbbbb; font-weight:400; margin-top: -0.5rem;'>Sourcing Intelligence for Resilient Supply Chains</h3>
     </div>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div style='background: #002b36; padding: 0.5rem 1rem; border-radius: 6px; color: #91caff; font-size: 0.85rem; margin-bottom: 1rem;'>
-🔎 <strong>Note:</strong> This tool is part of a non-commercial academic research project. See disclaimer below.
-</div>
 """, unsafe_allow_html=True)
 
 # ---- PAGE: DASHBOARD ----
