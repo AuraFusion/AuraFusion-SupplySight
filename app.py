@@ -68,14 +68,14 @@ page = st.sidebar.radio("Navigate", ["About", "Dashboard", "Contact"])
 
 # ---- HEADER ----
 st.markdown("""
-    <div style='text-align: left; padding: 0.5rem 0 0rem 0;'>
-        <img src='https://raw.githubusercontent.com/ResiliLytics/ResiliLytics-assets/main/Logo%203.png' alt='ResiliLytics Logo 3' width='360'>
-        <img src='https://raw.githubusercontent.com/ResiliLytics/ResiliLytics-assets/main/Logo%204.png' alt='ResiliLytics Logo 4' width='160'> 
-        <h1 style='color: #ffffff; margin-bottom: .2rem; margin-top: -0.2rem;'>ResiliLytics Dashboard</h1>
-        <h3 style='color: #bbbbbb; font-weight:400; margin-top: -0.5rem;'>Sourcing Intelligence for Resilient Supply Chains</h3>
+<div style='display: flex; align-items: center; background-color: #0e1117; padding: 1rem; border-radius: 10px; margin-bottom: 1rem;'>
+    <img src='https://github.com/ResiliLytics/ResiliLytics-assets/blob/d3dc6cd2011816b6fe359d1867b286f4e7b07fa4/Logo%204.png?raw=true' alt='ResiliLytics Logo' width='90' style='margin-right: 20px;'/>
+    <div>
+        <h1 style='color: #fdf6e3; font-size: 2.5rem; margin: 0;'>ResiliLytics Dashboard</h1>
+        <h3 style='color: #e0e0e0; font-weight: 400; margin-top: 0.2rem;'>Sourcing Intelligence for Resilient Supply Chains</h3>
     </div>
+</div>
 """, unsafe_allow_html=True)
-
 # ---- PAGE: DASHBOARD ----
 if page == "Dashboard":
     st.markdown("### Upload Your Data")
