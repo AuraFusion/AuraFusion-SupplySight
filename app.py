@@ -6,10 +6,14 @@ import plotly.graph_objects as go
 st.set_page_config(page_title="ResiliLytics", layout="wide")
 
 st.markdown("""
-<div style='background: #002b36; padding: 0.5rem 1rem; border-radius: 10px; color: #91caff; font-size: 0.85rem; margin-bottom: 1rem;'>
-🔎 <strong>Note:</strong> This tool is part of a non-commercial academic research project. See disclaimer below.
+<div style='position: fixed; top: 0; width: 100%; background: #003366; padding: 10px 0; z-index: 9999;'>
+  <marquee behavior="scroll" direction="left" scrollamount="5" style="color: #ffffff; font-size: 0.95rem; font-weight: 500;">
+    🔎 Note: This tool is part of a non-commercial academic research project. See disclaimer below.
+  </marquee>
 </div>
+<br><br><br>
 """, unsafe_allow_html=True)
+
 
 # ---- SIDEBAR ----
 st.sidebar.title("📊 ResiliLytics")
