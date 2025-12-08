@@ -35,10 +35,9 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-
 # ---- SIDEBAR ----
 st.sidebar.title("📊 ResiliLytics")
-page = st.sidebar.radio("Navigate", ["Dashboard", "About", "Contact"])
+page = st.sidebar.radio("Navigate", ["About", "Dashboard", "Contact"])
 
 # ---- HEADER ----
 st.markdown("""
