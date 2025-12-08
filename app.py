@@ -17,7 +17,7 @@ page = st.sidebar.radio("Navigate", ["Dashboard", "About", "Contact"])
 
 # ---- HEADER ----
 st.markdown("""
-    <div style='text-align: left; padding: 0.5rem 0 0rem 0;'>
+    <div style='text-align: center; padding: 0.5rem 0 0rem 0;'>
         <img src='https://raw.githubusercontent.com/ResiliLytics/ResiliLytics-assets/main/Logo%203.png' alt='ResiliLytics Logo 3' width='360'>
         <h1 style='color: #ffffff; margin-bottom: .2rem; margin-top: -0.2rem;'>ResiliLytics Dashboard</h1>
         <h3 style='color: #bbbbbb; font-weight:400; margin-top: -0.5rem;'>Sourcing Intelligence for Resilient Supply Chains</h3>
