@@ -4,36 +4,10 @@ import numpy as np
 import plotly.graph_objects as go
 
 st.markdown("""
-<style>
-@keyframes scroll-left {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-
-.scrolling-banner 
-  background: #004d60;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
-
-.scrolling-text 
-  display: inline-block;
-  color: #e5f9ff;
-  font-size: 0.95rem;
-  font-weight: 500;
-  animation: scroll-left 18s linear infinite;
-
-</style>
-
-<div class="scrolling-banner">
-  <div class="scrolling-text">
-    🔎 Note: This tool is part of a non‑commercial academic research project. See disclaimer below.
-  </div>
+<div style='background: #002b36; padding: 0.5rem 1rem; border-radius: 6px; color: #91caff; font-size: 0.85rem; margin-bottom: 1rem;'>
+🔎 <strong>Note:</strong> This tool is part of a non-commercial academic research project. See disclaimer below.
 </div>
 """, unsafe_allow_html=True)
-
 # ---- SIDEBAR ----
 st.sidebar.title("📊 ResiliLytics")
 page = st.sidebar.radio("Navigate", ["About", "Dashboard", "Contact"])
