@@ -3,33 +3,21 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 
-import streamlit as st
-
 # Set page config
 st.set_page_config(layout="wide", page_title="ResiliLytics")
 
-# Override default Streamlit padding/margins + fix alignment
+# CSS and scrolling banner
 st.markdown("""
 <style>
-/* Remove Streamlit's default left/right padding */
-.css-18e3th9 {
-    padding-left: 0rem !important;
-    padding-right: 0rem !important;
-}
-.css-1d391kg {
-    padding-left: 0rem !important;
-    padding-right: 0rem !important;
-}
-
-/* Optional: remove margins from the main block container */
-.block-container {
+/* Layout fix */
+.css-18e3th9, .css-1d391kg, .block-container {
     padding-left: 0rem !important;
     padding-right: 0rem !important;
     margin-left: 0rem !important;
     margin-right: 0rem !important;
 }
 
-/* Scrolling banner styling */
+/* Scrolling banner */
 @keyframes scroll-left {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
@@ -40,7 +28,6 @@ st.markdown("""
   padding: 0.5rem 0;
   overflow: hidden;
   white-space: nowrap;
-  box-sizing: border-box;
 }
 .scrolling-text {
   display: inline-block;
@@ -54,7 +41,6 @@ st.markdown("""
 }
 </style>
 
-<!-- Scrolling banner -->
 <div class="scrolling-banner">
   <div class="scrolling-text">
     🔎 Note: This tool is part of a non-commercial academic research project. See disclaimer below.
@@ -65,6 +51,7 @@ st.markdown("""
 # ---- SIDEBAR ----
 st.sidebar.title("📊 ResiliLytics")
 page = st.sidebar.selectbox("Navigate", ["Dashboard", "About", "Contact"])
+
 # ---- HEADER ----
 st.markdown("""
 <div style='display: flex; align-items: center; background-color: #0e1117; padding: 1rem; border-radius: 10px; margin-bottom: 5rem;'>
@@ -75,6 +62,7 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 # ---- PAGE: DASHBOARD ----
 if page == "Dashboard":
     st.markdown("### Upload Your Data")
@@ -154,42 +142,41 @@ if page == "Dashboard":
         st.image("https://github.com/ResiliLytics/ResiliLytics-assets/blob/b553fe3aa11e13bd72d77789970bc3bb3cc08147/Final%20Dashboard%20Sample.png?raw=true")
 
 # ---- PAGE: ABOUT ----
-
 elif page == "About":
     st.markdown("## ℹ️ About ResiliLytics")
     st.markdown("""
     ResiliLytics is a free next-generation platform designed to help Small and Medium Enterprises (SMEs) monitor and improve supply chain resilience using intelligent risk-to-action insights.
-""")
-with st.expander("Read full description"):
-    st.markdown("""
-    Powered by data and guided by insight, ResiliLytics:
-    
-    - Analyzes supplier risk exposure  
-    - Recommends mitigation strategies  
-    - Translates supply chain complexity into clear, actionable plans  
-
-    ### 🧠 What Makes It Unique?
-    ResiliLytics brings together:
-
-    - 📦 Supply chain analytics  
-    - ⚠️ Risk classification  
-    - 🤖 AI-assisted insights  
-    - 🎯 Decision-ready recommendations  
-
-    ### 🧪 Original Contribution
-    ResiliLytics introduces a novel approach to:
-
-    - Supply chain visualization  
-    - Dynamic diversification metrics  
-    - End-to-end data-to-action transformation  
-
-    The platform supports ongoing research into improving SME supply-chain resilience through intelligent systems.
     """)
+    
+    with st.expander("Read full description"):
+        st.markdown("""
+        Powered by data and guided by insight, ResiliLytics:
+
+        - Analyzes supplier risk exposure  
+        - Recommends mitigation strategies  
+        - Translates supply chain complexity into clear, actionable plans  
+
+        ### 🧠 What Makes It Unique?
+        ResiliLytics brings together:
+
+        - 📦 Supply chain analytics  
+        - ⚠️ Risk classification  
+        - 🤖 AI-assisted insights  
+        - 🎯 Decision-ready recommendations  
+
+        ### 🧪 Original Contribution
+        ResiliLytics introduces a novel approach to:
+
+        - Supply chain visualization  
+        - Dynamic diversification metrics  
+        - End-to-end data-to-action transformation  
+
+        The platform supports ongoing research into improving SME supply-chain resilience through intelligent systems.
+        """)
 
 # ---- PAGE: CONTACT ----
-
 elif page == "Contact":
-    st.markdown("## Contact Us")
+    st.markdown("## 📬 Contact Us")
     st.markdown("Have feedback or want to collaborate? Fill out the form below.")
     
     contact_form = """
@@ -202,7 +189,7 @@ elif page == "Contact":
     """
     st.markdown(contact_form, unsafe_allow_html=True)
 
-# ---- LEGAL DISCLAIMER ----
+# ---- LEGAL NOTICE ----
 st.markdown("### 📜 Legal Notice")
 st.markdown("---")
 st.markdown("""
