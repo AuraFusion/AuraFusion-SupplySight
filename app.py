@@ -142,29 +142,31 @@ with tab1:
 
 # --------------- TAB 2: About ---------------
 with tab2:
-    st.markdown("## About ResiliLytics")
-    st.markdown("ResiliLytics is a free next-generation platform designed to help Small and Medium Enterprises (SMEs) monitor and improve supply chain resilience using intelligent risk-to-action insights.")
+with tab1:
+    st.markdown("## 📖 Help & FAQ")
 
-    with st.expander("Read full description"):
-        st.markdown("""
-        Powered by data and guided by insight, ResiliLytics:
-        - Analyzes supplier risk exposure  
-        - Recommends mitigation strategies  
-        - Translates supply chain complexity into clear, actionable plans  
+    st.markdown("### ▶️ Quick Tutorial Video")
+    st.video("https://www.youtube.com/embed/YOUR_VIDEO_ID")
 
-        ### 🧠 What Makes It Unique?
-        ResiliLytics brings together:
-        - 📦 Supply chain analytics  
-        - ⚠️ Risk classification  
-        - 🤖 AI-assisted insights  
-        - 🎯 Decision-ready recommendations  
+    st.markdown("### 📄 User Manual")
+    st.markdown("""
+    - [📥 Download the Guide (PDF)](https://yourwebsite.com/resililytics-guide.pdf)
+    - Or open the [📘 Online Manual](https://yourwebsite.com/help-doc)
+    """)
 
-        ### 🧪 Original Contribution
-        ResiliLytics introduces a novel approach to:
-        - Supply chain visualization  
-        - Dynamic diversification metrics  
-        - End-to-end data-to-action transformation  
-        """)
+    st.markdown("### ❓ Frequently Asked Questions")
+
+    with st.expander("What kind of data should I upload?"):
+        st.markdown("Use a `.csv` or `.xlsx` file with columns like: Supplier, Country, Spend, etc.")
+    
+    with st.expander("How is the Resilience Score calculated?"):
+        st.markdown("100 - Supplier Concentration (%) - (Avg. Cost Volatility × 10)")
+
+    with st.expander("Where is my data stored?"):
+        st.markdown("Your data is temporarily processed and not stored. No sensitive info is saved.")
+
+    st.markdown("---")
+    st.markdown("Still have questions? 👉 [**Contact Us Here**](#📬-contact)", unsafe_allow_html=True)
 
 # --------------- TAB 3: Contact ---------------
 with tab3:
