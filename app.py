@@ -55,7 +55,7 @@ tab1, tab2, tab3 = st.tabs([" Dashboard", " About", " Contact"])
 
 # --------------- TAB 1: Dashboard ---------------
 with tab1:
-      st.markdown("## About ResiliLytics")
+    st.markdown("## About ResiliLytics")
     st.markdown("ResiliLytics is a free next-generation platform designed to help Small and Medium Enterprises (SMEs) monitor and improve supply chain resilience using intelligent risk-to-action insights.")
 
     with st.expander("Read full description"):
