@@ -174,9 +174,6 @@ with tab3:
                       required></textarea>
         </label><br>
 
-        <!-- Honeypot -->
-        <input type="text" name="_gotcha" style="display:none">
-
         <button type="submit"
                 style="background-color:#228be6; color:white;
                        padding:10px 20px; border:none;
