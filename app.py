@@ -66,14 +66,14 @@ with tab1:
         - Translates supply chain complexity into clear, actionable plans  
 
         ### What Makes It Unique?
-        ResiliLytics brings together:
+        **ResiliLytics** brings together:
         -  Supply chain analytics  
         -  Risk classification  
         -  AI-assisted insights  
         -  Decision-ready recommendations  
 
         ### Original Contribution
-        ResiliLytics introduces a novel approach to:
+        **ResiliLytics** introduces a novel approach to:
         - Supply chain visualization  
         - Dynamic diversification metrics  
         - End-to-end data-to-action transformation  
