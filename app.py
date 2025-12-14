@@ -142,7 +142,6 @@ with tab1:
 
 # --------------- TAB 2: About ---------------
 with tab2:
-with tab1:
     st.markdown("## 📖 Help & FAQ")
 
     st.markdown("### ▶️ Quick Tutorial Video")
