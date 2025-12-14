@@ -60,7 +60,7 @@ with tab1:
 
     with st.expander("Read full description"):
         st.markdown("""
-        Powered by data and guided by insight, ResiliLytics:
+        Powered by data and guided by insight, **ResiliLytics**:
         - Analyzes supplier risk exposure  
         - Recommends mitigation strategies  
         - Translates supply chain complexity into clear, actionable plans  
