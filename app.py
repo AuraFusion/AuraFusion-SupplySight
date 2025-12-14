@@ -145,9 +145,8 @@ with tab2:
     st.markdown("## 📖 Help & FAQ")
 
     st.markdown("### 🛠️ How It Works")
-
+    
     col1, col2 = st.columns(2)
-
     with col1:
         st.markdown("""
         <div style="background:#228be6; padding:1rem; border-radius:10px; color:white;">
@@ -155,7 +154,6 @@ with tab2:
             Upload your CSV or Excel file with basic supplier data.
         </div>
         """, unsafe_allow_html=True)
-
     with col2:
         st.markdown("""
         <div style="background:#20c997; padding:1rem; border-radius:10px; color:white;">
@@ -165,7 +163,6 @@ with tab2:
         """, unsafe_allow_html=True)
 
     col3, col4 = st.columns(2)
-
     with col3:
         st.markdown("""
         <div style="background:#f76707; padding:1rem; border-radius:10px; color:white;">
@@ -173,13 +170,24 @@ with tab2:
             View mitigation suggestions tailored to your results.
         </div>
         """, unsafe_allow_html=True)
-
     with col4:
         st.markdown("""
         <div style="background:#ae3ec9; padding:1rem; border-radius:10px; color:white;">
             <h4>📄 Export or Explore</h4>
             Download your report or try alternate data for comparison.
         </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("---")
+    st.markdown("### 📺 Learn More")
+
+    with st.expander("▶️ Watch Quick Tutorial Video"):
+        st.video("https://www.youtube.com/embed/YOUR_VIDEO_ID")  # Replace with real ID
+
+    with st.expander("📄 Download or View User Manual"):
+        st.markdown("""
+        - 📥 [Download the Guide (PDF)](https://yourwebsite.com/resililytics-guide.pdf)
+        - 📘 [Open the Online Manual](https://yourwebsite.com/help-doc)
         """, unsafe_allow_html=True)
 
     st.markdown("---")
@@ -199,6 +207,7 @@ with tab2:
 
     st.markdown("---")
     st.markdown("Still have questions? 👉 [**Contact Us Here**](https://resililytics-app.streamlit.app/#contact)")
+
   
 # --------------- TAB 3: Contact ---------------
 with tab3:
