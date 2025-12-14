@@ -143,77 +143,62 @@ with tab1:
 # --------------- TAB 2: About ---------------
 with tab2:
     st.markdown("## 📖 Help & FAQ")
-st.markdown("### 🛠️ How It Works")
-col1, col2 = st.columns(2)
 
-with col1:
-    st.markdown("""
-    <div style="background:#f0f2f6;padding:1rem;border-radius:10px">
-    <h4>📤 Upload Your File</h4>
-    Upload your CSV or Excel with supplier data.
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("### 🛠️ How It Works")
 
-with col2:
-    st.markdown("""
-    <div style="background:#f0f2f6;padding:1rem;border-radius:10px">
-    <h4>📈 Analyze</h4>
-    See your resilience score, risks, and supplier exposure.
-    </div>
-    """, unsafe_allow_html=True)
+    col1, col2 = st.columns(2)
 
-col3, col4 = st.columns(2)
+    with col1:
+        st.markdown("""
+        <div style="background:#228be6; padding:1rem; border-radius:10px; color:white;">
+            <h4>📤 Upload Your File</h4>
+            Upload your CSV or Excel file with basic supplier data.
+        </div>
+        """, unsafe_allow_html=True)
 
-with col3:
-    st.markdown("""
-    <div style="background:#f0f2f6;padding:1rem;border-radius:10px">
-    <h4>💡 Get Recommendations</h4>
-    Dynamic AI-style suggestions for resilience.
-    </div>
-    """, unsafe_allow_html=True)
+    with col2:
+        st.markdown("""
+        <div style="background:#20c997; padding:1rem; border-radius:10px; color:white;">
+            <h4>📈 Analyze</h4>
+            Instantly see resilience scores, risks, and exposure metrics.
+        </div>
+        """, unsafe_allow_html=True)
 
-with col4:
-    st.markdown("""
-    <div style="background:#f0f2f6;padding:1rem;border-radius:10px">
-    <h4>📄 Export or Explore</h4>
-    Download reports or try different input scenarios.
-    </div>
-    """, unsafe_allow_html=True)
-    st.markdown("### ❓ Frequently Asked Questions")
+    col3, col4 = st.columns(2)
 
-    with st.expander("What kind of data should I upload?"):
-        st.markdown("Use a `.csv` or `.xlsx` file with columns like: Supplier, Country, Spend, etc.")
-    
-    with st.expander("How is the Resilience Score calculated?"):
-        st.markdown("100 - Supplier Concentration (%) - (Avg. Cost Volatility × 10)")
+    with col3:
+        st.markdown("""
+        <div style="background:#f76707; padding:1rem; border-radius:10px; color:white;">
+            <h4>💡 Get Recommendations</h4>
+            View mitigation suggestions tailored to your results.
+        </div>
+        """, unsafe_allow_html=True)
 
-    with st.expander("Where is my data stored?"):
-        st.markdown("Your data is temporarily processed and not stored. No sensitive info is saved.")
+    with col4:
+        st.markdown("""
+        <div style="background:#ae3ec9; padding:1rem; border-radius:10px; color:white;">
+            <h4>📄 Export or Explore</h4>
+            Download your report or try alternate data for comparison.
+        </div>
+        """, unsafe_allow_html=True)
 
     st.markdown("---")
-    st.markdown("Still have questions? 👉 [**Contact Us Here**](#📬-contact)", unsafe_allow_html=True)
-    st.markdown("### ▶️ Quick Tutorial Video")
-    st.video("https://www.youtube.com/embed/YOUR_VIDEO_ID")
+    st.markdown("### ❓ Frequently Asked Questions")
 
-    st.markdown("### 📄 User Manual")
-    st.markdown("""
-    - [📥 Download the Guide (PDF)](https://yourwebsite.com/resililytics-guide.pdf)
-    - Or open the [📘 Online Manual](https://yourwebsite.com/help-doc)
-    """)
+    with st.expander("What data do I need to use the app?"):
+        st.write("A simple file (CSV or Excel) with supplier names, spend, country, and historical cost values. You can download a template from the homepage.")
 
-# --------------- TAB 3: Contact ---------------
-with tab3:
-    st.markdown("## Contact Us")
-    st.markdown("Have feedback or want to collaborate? Fill out the form below.")
-    contact_form = """
-    <form action="https://formspree.io/f/xrbnaeqd" method="POST">
-        <label>Your email:<br><input type="email" name="email" style="width: 100%; padding: 8px;" required></label><br><br>
-        <label>Your message:<br><textarea name="message" rows="5" style="width: 100%; padding: 8px;" required></textarea></label><br>
-        <input type="text" name="_gotcha" style="display:none"> <!-- honeypot -->
-        <button type="submit" style="background-color:#228be6; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">Send</button>
-    </form>
-    """
-    st.markdown(contact_form, unsafe_allow_html=True)
+    with st.expander("Is my data private?"):
+        st.write("Yes. This tool runs entirely in your browser session. Your data is not stored or shared.")
+
+    with st.expander("What happens after I upload my file?"):
+        st.write("The system calculates your resilience score, evaluates risk, and gives actionable mitigation suggestions — all instantly.")
+
+    with st.expander("How are resilience metrics calculated?"):
+        st.write("Visit the README on GitHub or scroll to the bottom of the app for a full breakdown of formulas and logic.")
+
+    st.markdown("---")
+    st.markdown("Still have questions? 👉 [**Contact Us Here**](https://resililytics-app.streamlit.app/#contact)")
 
 # ---- LEGAL & NON-COMMERCIAL USE DISCLAIMER ----
 st.markdown("""
