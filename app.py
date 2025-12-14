@@ -185,8 +185,14 @@ with col3:
     """, unsafe_allow_html=True)
 
 # ---- Upload Section Heading ----
-st.markdown("### 📁 Upload Your Data")
-st.markdown("Upload your .csv or .xlsx file and review your resilience profile instantly.")
+st.markdown("""
+<div style="background:#111111;padding:1.5rem;border-radius:10px;margin-top:2rem;">
+<h3 style='color:white;'>📂 Upload Your Data</h3>
+<p style='color:#ccc;'>Upload your <code>.csv</code> or <code>.xlsx</code> file and review your resilience profile instantly.</p>
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("📥 [Download Sample Template](https://yourwebsite.com/sample-template.xlsx)")
 
 # ---- Collapsible Raw Data Table ----
 with st.expander("📊 View Raw Supplier Data Table"):
