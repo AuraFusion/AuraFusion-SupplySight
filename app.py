@@ -199,6 +199,20 @@ with tab2:
 
     st.markdown("---")
     st.markdown("Still have questions? 👉 [**Contact Us Here**](https://resililytics-app.streamlit.app/#contact)")
+  
+# --------------- TAB 3: Contact ---------------
+with tab3:
+    st.markdown("## Contact Us")
+    st.markdown("Have feedback or want to collaborate? Fill out the form below.")
+    contact_form = """
+    <form action="https://formspree.io/f/xrbnaeqd" method="POST">
+        <label>Your email:<br><input type="email" name="email" style="width: 100%; padding: 8px;" required></label><br><br>
+        <label>Your message:<br><textarea name="message" rows="5" style="width: 100%; padding: 8px;" required></textarea></label><br>
+        <input type="text" name="_gotcha" style="display:none"> <!-- honeypot -->
+        <button type="submit" style="background-color:#228be6; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">Send</button>
+    </form>
+    """
+    st.markdown(contact_form, unsafe_allow_html=True)
 
 # ---- LEGAL & NON-COMMERCIAL USE DISCLAIMER ----
 st.markdown("""
