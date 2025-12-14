@@ -145,44 +145,16 @@ with tab2:
 
 # --------------- TAB 3: Contact ---------------
 with tab3:
-    st.markdown("## 📬 Contact Us")
+    st.markdown("## Contact Us")
     st.markdown("Have feedback or want to collaborate? Fill out the form below.")
-
-    # Show confirmation after redirect
-    query_params = st.experimental_get_query_params()
-    if "submitted" in query_params:
-        st.success("✅ Thank you! Your message has been sent successfully.")
-
     contact_form = """
-    <form action="https://formspree.io/f/xrbnaeqd" method="POST"
-          onsubmit="window.location.search='?submitted=true';">
-        
-        <label>
-            Your email:<br>
-            <input type="email" name="email"
-                   placeholder="you@example.com"
-                   style="width: 100%; padding: 8px;"
-                   required>
-        </label><br><br>
-
-        <label>
-            Your message:<br>
-            <textarea name="message"
-                      placeholder="Write your message here..."
-                      rows="5"
-                      style="width: 100%; padding: 8px;"
-                      required></textarea>
-        </label><br>
-
-        <button type="submit"
-                style="background-color:#228be6; color:white;
-                       padding:10px 20px; border:none;
-                       border-radius:5px; cursor:pointer;">
-            Send
-        </button>
+    <form action="https://formspree.io/f/xrbnaeqd" method="POST">
+        <label>Your email:<br><input type="email" name="email" style="width: 100%; padding: 8px;" required></label><br><br>
+        <label>Your message:<br><textarea name="message" rows="5" style="width: 100%; padding: 8px;" required></textarea></label><br>
+        <input type="text" name="_gotcha" style="display:none"> <!-- honeypot -->
+        <button type="submit" style="background-color:#228be6; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">Send</button>
     </form>
     """
-
     st.markdown(contact_form, unsafe_allow_html=True)
 
 # ---- LEGAL & NON-COMMERCIAL USE DISCLAIMER ----
