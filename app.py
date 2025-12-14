@@ -191,7 +191,6 @@ st.markdown("""
 <p style='color:#ccc;'>Upload your <code>.csv</code> or <code>.xlsx</code> file and review your resilience profile instantly.</p>
 </div>
 """, unsafe_allow_html=True)
-
 st.markdown("📥 [Download Sample Template](https://yourwebsite.com/sample-template.xlsx)")
 
 # ---- Collapsible Raw Data Table ----
