@@ -143,15 +143,6 @@ with tab1:
 # --------------- TAB 2: About ---------------
 with tab2:
     st.markdown("## 📖 Help & FAQ")
-
-    st.markdown("### ▶️ Quick Tutorial Video")
-    st.video("https://www.youtube.com/embed/YOUR_VIDEO_ID")
-
-    st.markdown("### 📄 User Manual")
-    st.markdown("""
-    - [📥 Download the Guide (PDF)](https://yourwebsite.com/resililytics-guide.pdf)
-    - Or open the [📘 Online Manual](https://yourwebsite.com/help-doc)
-    """)
 st.markdown("### 🛠️ How It Works")
 col1, col2 = st.columns(2)
 
@@ -201,6 +192,14 @@ with col4:
 
     st.markdown("---")
     st.markdown("Still have questions? 👉 [**Contact Us Here**](#📬-contact)", unsafe_allow_html=True)
+    st.markdown("### ▶️ Quick Tutorial Video")
+    st.video("https://www.youtube.com/embed/YOUR_VIDEO_ID")
+
+    st.markdown("### 📄 User Manual")
+    st.markdown("""
+    - [📥 Download the Guide (PDF)](https://yourwebsite.com/resililytics-guide.pdf)
+    - Or open the [📘 Online Manual](https://yourwebsite.com/help-doc)
+    """)
 
 # --------------- TAB 3: Contact ---------------
 with tab3:
