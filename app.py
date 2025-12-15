@@ -212,7 +212,6 @@ with st.expander("📊 View Raw Supplier Data Table"):
     st.dataframe(df)
     st.download_button("📥 Download Full Data", data=df.to_csv(index=False), file_name="resililytics_output.csv", mime="text/csv")
 
-
 # --------------- TAB 2: About ---------------
 with tab2:
     st.markdown("## 📖 Help & FAQ")
