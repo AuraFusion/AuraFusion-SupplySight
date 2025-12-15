@@ -131,7 +131,7 @@ fig.update_layout(
 )
 st.plotly_chart(fig, use_container_width=True)
 
-        with col2:
+      with col2:
             st.markdown("#### Key Metrics")
             c1, c2 = st.columns(2)
             c1.markdown(f"<div style='background:#f6c542; padding:1rem; border-radius:10px; color:#222; text-align:center;'>Supplier Concentration<br><span style='font-size:1.6em;font-weight:bold;'>{top_supplier_pct:.1f}%</span></div>", unsafe_allow_html=True)
@@ -139,7 +139,7 @@ st.plotly_chart(fig, use_container_width=True)
             c1.markdown(f"<div style='background:#e74c3c; padding:1rem; border-radius:10px; color:#fff; text-align:center;'>Cost Volatility<br><span style='font-size:1.2em;font-weight:bold;'>{volatility_level}</span></div>", unsafe_allow_html=True)
             c2.markdown(f"<div style='background:{risk_color}; padding:1rem; border-radius:10px; color:#fff; text-align:center;'>Supply Risk<br><span style='font-size:1.2em;font-weight:bold;'>{supply_risk}</span></div>", unsafe_allow_html=True)
 
-        with col3:
+      with col3:
             st.markdown("#### Recommendations")
             st.markdown("""
             <div style='background:#43a047; color:#fff; border-radius:10px; padding:1rem; margin-bottom:8px;'>✅ Evaluate alternate suppliers in East Asia</div>
