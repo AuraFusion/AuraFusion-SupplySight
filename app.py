@@ -183,8 +183,22 @@ with col2:
         "USA": "Americas", "Canada": "Americas", "Mexico": "Americas",
         "Germany": "Europe", "France": "Europe", "UK": "Europe", "Italy": "Europe"
     }
+if uploaded_file:
+
+    # df is defined here
+    df = pd.read_csv(uploaded_file) if uploaded_file.name.endswith('.csv') else pd.read_excel(uploaded_file)
+
+    # --- Region Mapping ---
+    region_map = {
+        "China": "Asia", "Japan": "Asia", "India": "Asia", "Vietnam": "Asia",
+        "USA": "Americas", "Canada": "Americas", "Mexico": "Americas",
+        "Germany": "Europe", "France": "Europe", "UK": "Europe", "Italy": "Europe"
+    }
 
     df["Region"] = df["Country"].map(region_map).fillna("Other")
+
+    region_breakdown = df.groupby("Region")["Spend"].sum()
+df["Region"] = df["Country"].map(region_map).fillna("Other")
 
     region_breakdown = df.groupby("Region")["Spend"].sum()
 
