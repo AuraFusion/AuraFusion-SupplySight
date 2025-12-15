@@ -172,16 +172,22 @@ with col2:
         "USA": "Americas", "Canada": "Americas", "Mexico": "Americas",
         "Germany": "Europe", "France": "Europe", "UK": "Europe", "Italy": "Europe"
     }
+  if uploaded_file:
+
+    # df is defined here
+    df = pd.read_csv(uploaded_file) if uploaded_file.name.endswith('.csv') else pd.read_excel(uploaded_file)
+
+    # --- Region Mapping ---
+    region_map = {
+        "China": "Asia", "Japan": "Asia", "India": "Asia", "Vietnam": "Asia",
+        "USA": "Americas", "Canada": "Americas", "Mexico": "Americas",
+        "Germany": "Europe", "France": "Europe", "UK": "Europe", "Italy": "Europe"
+    }
+
     df["Region"] = df["Country"].map(region_map).fillna("Other")
+
     region_breakdown = df.groupby("Region")["Spend"].sum()
-    fig_donut = go.Figure(data=[go.Pie(
-        labels=region_breakdown.index,
-        values=region_breakdown.values,
-        hole=0.5,
-        textinfo='label+percent'
-    )])
-    fig_donut.update_layout(height=300, margin=dict(l=0, r=0, t=30, b=0))
-    st.plotly_chart(fig_donut, use_container_width=True)
+
 
 with col3:
     st.markdown("##### 🛡️ Mitigation Plan")
