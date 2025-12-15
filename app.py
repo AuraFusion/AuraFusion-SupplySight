@@ -54,9 +54,15 @@ st.markdown("""
 tab1, tab2, tab3 = st.tabs([" Dashboard", " Help & FAQ", " Contact"])
 
 # --------------- TAB 1: Dashboard ---------------
+# --------------- TAB 1: Dashboard ---------------
 with tab1:
+
+    # ---- ABOUT (SHORT) ----
     st.markdown("## About ResiliLytics")
-    st.markdown("ResiliLytics is a free next-generation platform designed to help Small and Medium Enterprises (SMEs) monitor and improve supply chain resilience using intelligent risk-to-action insights.")
+    st.markdown(
+        "ResiliLytics is a free next-generation platform designed to help Small and Medium Enterprises (SMEs) "
+        "monitor and improve supply chain resilience using intelligent risk-to-action insights."
+    )
 
     with st.expander("Read full description"):
         st.markdown("""
@@ -67,10 +73,10 @@ with tab1:
 
         ### What Makes It Unique?
         **ResiliLytics** brings together:
-        -  Supply chain analytics  
-        -  Risk classification  
-        -  AI-assisted insights  
-        -  Decision-ready recommendations  
+        - Supply chain analytics  
+        - Risk classification  
+        - AI-assisted insights  
+        - Decision-ready recommendations  
 
         ### Original Contribution
         **ResiliLytics** introduces a novel approach to:
@@ -78,153 +84,188 @@ with tab1:
         - Dynamic diversification metrics  
         - End-to-end data-to-action transformation  
         """)
+
+    st.markdown("---")
+
+    # ---- UPLOAD ----
     st.markdown("### Upload Your Data")
-    uploaded_file = st.file_uploader("Choose a .csv or .xlsx file", type=['csv', 'xlsx'])
+    st.markdown(
+        "Upload your **.csv or .xlsx** file and review your **resilience profile instantly**."
+    )
+
+    uploaded_file = st.file_uploader(
+        "Choose a .csv or .xlsx file",
+        type=["csv", "xlsx"]
+    )
+
+    st.markdown(
+        "📥 **Download a sample template below** to get started."
+    )
 
     if uploaded_file:
-        df = pd.read_csv(uploaded_file) if uploaded_file.name.endswith('.csv') else pd.read_excel(uploaded_file)
-        total_spend = df['Spend'].sum()
-        top_supplier_pct = df.groupby('Supplier')['Spend'].sum().max() / total_spend * 100
-        num_countries = df['Country'].nunique()
+        df = pd.read_csv(uploaded_file) if uploaded_file.name.endswith(".csv") else pd.read_excel(uploaded_file)
+
+        # ---- METRICS ----
+        total_spend = df["Spend"].sum()
+        top_supplier_pct = df.groupby("Supplier")["Spend"].sum().max() / total_spend * 100
+        num_countries = df["Country"].nunique()
 
         def compute_volatility(row):
             try:
-                prices = list(map(float, str(row['Historical_Costs']).split(';')))
+                prices = list(map(float, str(row["Historical_Costs"]).split(";")))
                 return np.std(prices)
             except:
                 return np.nan
 
-        df['Volatility'] = df.apply(compute_volatility, axis=1)
-        avg_volatility = df['Volatility'].mean()
+        df["Volatility"] = df.apply(compute_volatility, axis=1)
+        avg_volatility = df["Volatility"].mean()
 
         resilience_score = max(0, 100 - top_supplier_pct - (avg_volatility * 10))
-        supply_risk = "High" if top_supplier_pct > 50 or avg_volatility > 0.5 else "Moderate" if avg_volatility > 0.3 else "Low"
-        volatility_level = "High" if avg_volatility > 0.5 else "Moderate" if avg_volatility > 0.3 else "Low"
-        risk_color = "#e74c3c" if supply_risk == "High" else "#e67e22" if supply_risk == "Moderate" else "#43a047"
 
-        col1, col2, col3 = st.columns([1.1, 1, 1])
+        supply_risk = (
+            "High" if top_supplier_pct > 50 or avg_volatility > 0.5
+            else "Moderate" if avg_volatility > 0.3
+            else "Low"
+        )
+
+        volatility_level = (
+            "High" if avg_volatility > 0.5
+            else "Moderate" if avg_volatility > 0.3
+            else "Low"
+        )
+
+        risk_color = (
+            "#e74c3c" if supply_risk == "High"
+            else "#f1c40f" if supply_risk == "Moderate"
+            else "#2ecc71"
+        )
+
+        st.markdown("---")
+
+        # ---- TOP ROW ----
+        col1, col2, col3 = st.columns([1.2, 1, 1])
+
+        # ---- RESILIENCE GAUGE (MATCHES SCREENSHOT 2) ----
         with col1:
             st.markdown("#### Resilience Score")
-            fig = go.Figure(go.Indicator(
-                mode="gauge+number",
-                value=resilience_score,
-                gauge={
-                    "axis": {"range": [0, 100]},
-                    "bar": {"color": "#238823"},
-                    "steps": [
-                        {"range": [0, 50], "color": "#e74c3c"},
-                        {"range": [50, 75], "color": "#f6c542"},
-                        {"range": [75, 100], "color": "#43a047"},
-                    ],
-                },
-            ))
-            fig.update_layout(height=220, margin=dict(l=0, r=0, t=30, b=0))
-            st.plotly_chart(fig, use_container_width=True)
-fig = go.Figure(go.Indicator(
-    mode="gauge+number",
-    value=resilience_score,
-    number={'font': {'size': 48, 'color': 'white'}},
-    gauge={
-        "axis": {"range": [0, 100], "tickwidth": 1, "tickcolor": "white"},
-        "bar": {"color": "#00cc44"},
-        "bgcolor": "white",
-        "steps": [
-            {"range": [0, 50], "color": "#e74c3c"},
-            {"range": [50, 75], "color": "#f6c542"},
-            {"range": [75, 100], "color": "#43a047"},
-        ],
-        "threshold": {
-            "line": {"color": "white", "width": 4},
-            "thickness": 0.75,
-            "value": resilience_score
-        }
-    }
-))
-fig.update_layout(
-    height=250,
-    margin=dict(l=10, r=10, t=10, b=10),
-    paper_bgcolor="#0e1117",
-    font=dict(color="white", size=16)
-)
-st.plotly_chart(fig, use_container_width=True)
 
+            fig = go.Figure(
+                go.Indicator(
+                    mode="gauge+number",
+                    value=resilience_score,
+                    number={
+                        "font": {"size": 52, "color": "#ffffff"}
+                    },
+                    gauge={
+                        "axis": {
+                            "range": [0, 100],
+                            "tickwidth": 1,
+                            "tickcolor": "#aaa"
+                        },
+                        "bar": {
+                            "color": "#2ecc71",
+                            "thickness": 0.25
+                        },
+                        "bgcolor": "rgba(0,0,0,0)",
+                        "borderwidth": 0,
+                        "steps": [
+                            {"range": [0, 50], "color": "#e74c3c"},
+                            {"range": [50, 75], "color": "#f1c40f"},
+                            {"range": [75, 100], "color": "#2ecc71"},
+                        ],
+                    },
+                )
+            )
+
+            fig.update_layout(
+                height=280,
+                margin=dict(l=20, r=20, t=30, b=20),
+                paper_bgcolor="rgba(0,0,0,0)",
+                plot_bgcolor="rgba(0,0,0,0)",
+                font={"color": "white"},
+            )
+
+            st.plotly_chart(fig, use_container_width=True)
+
+        # ---- KEY METRICS ----
         with col2:
             st.markdown("#### Key Metrics")
-            c1, c2 = st.columns(2)
-            c1.markdown(f"<div style='background:#f6c542; padding:1rem; border-radius:10px; color:#222; text-align:center;'>Supplier Concentration<br><span style='font-size:1.6em;font-weight:bold;'>{top_supplier_pct:.1f}%</span></div>", unsafe_allow_html=True)
-            c2.markdown(f"<div style='background:#228be6; padding:1rem; border-radius:10px; color:#fff; text-align:center;'>Geographic Exposure<br><span style='font-size:1.6em;font-weight:bold;'>{num_countries} Countries</span></div>", unsafe_allow_html=True)
-            c1.markdown(f"<div style='background:#e74c3c; padding:1rem; border-radius:10px; color:#fff; text-align:center;'>Cost Volatility<br><span style='font-size:1.2em;font-weight:bold;'>{volatility_level}</span></div>", unsafe_allow_html=True)
-            c2.markdown(f"<div style='background:{risk_color}; padding:1rem; border-radius:10px; color:#fff; text-align:center;'>Supply Risk<br><span style='font-size:1.2em;font-weight:bold;'>{supply_risk}</span></div>", unsafe_allow_html=True)
 
+            c1, c2 = st.columns(2)
+
+            c1.markdown(
+                f"""
+                <div style="background:#f1c40f;padding:1rem;border-radius:10px;color:#111;text-align:center;">
+                    Supplier Concentration<br>
+                    <span style="font-size:1.6em;font-weight:bold;">{top_supplier_pct:.1f}%</span>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            c2.markdown(
+                f"""
+                <div style="background:#3498db;padding:1rem;border-radius:10px;color:#fff;text-align:center;">
+                    Geographic Exposure<br>
+                    <span style="font-size:1.6em;font-weight:bold;">{num_countries} Countries</span>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            c1.markdown(
+                f"""
+                <div style="background:#e74c3c;padding:1rem;border-radius:10px;color:#fff;text-align:center;">
+                    Cost Volatility<br>
+                    <span style="font-size:1.2em;font-weight:bold;">{volatility_level}</span>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            c2.markdown(
+                f"""
+                <div style="background:{risk_color};padding:1rem;border-radius:10px;color:#fff;text-align:center;">
+                    Supply Risk<br>
+                    <span style="font-size:1.2em;font-weight:bold;">{supply_risk}</span>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        # ---- RECOMMENDATIONS ----
         with col3:
             st.markdown("#### Recommendations")
-            st.markdown("""
-            <div style='background:#43a047; color:#fff; border-radius:10px; padding:1rem; margin-bottom:8px;'>✅ Evaluate alternate suppliers in East Asia</div>
-            <div style='background:#f6c542; color:#111; border-radius:10px; padding:1rem; margin-bottom:8px;'>📦 Increase buffer inventory for key items</div>
-            <div style='background:#228be6; color:#fff; border-radius:10px; padding:1rem; margin-bottom:8px;'>📄 Download Project Brief: Supplier Diversification</div>
-            """, unsafe_allow_html=True)
-# ---- Second Row: Risk Insights, Supplier Diversification, Mitigation Plan ----
-st.markdown("### 📊 Risk Insights | 🌍 Supplier Diversification | 🛡️ Mitigation Plan")
 
-col1, col2, col3 = st.columns([1, 1, 1])
+            st.markdown(
+                """
+                <div style="background:#2ecc71;color:#fff;border-radius:10px;padding:1rem;margin-bottom:8px;">
+                    ✅ Evaluate alternate suppliers in East Asia
+                </div>
+                <div style="background:#f1c40f;color:#111;border-radius:10px;padding:1rem;margin-bottom:8px;">
+                    📦 Increase buffer inventory for key items
+                </div>
+                <div style="background:#3498db;color:#fff;border-radius:10px;padding:1rem;margin-bottom:8px;">
+                    📄 Supplier Diversification Plan — Timeline: 3–6 months
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
 
-with col1:
-    st.markdown("##### 📊 Monthly Risk Alerts (Demo)")
-    risk_data = pd.DataFrame({
-        "Month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-        "Alerts": [4, 6, 8, 11, 13, 14]
-    })
-    fig_risk = go.Figure(data=[go.Bar(
-        x=risk_data["Month"], 
-        y=risk_data["Alerts"], 
-        marker_color='#228be6'
-    )])
-    fig_risk.update_layout(height=300, margin=dict(l=0, r=0, t=30, b=0))
-    st.plotly_chart(fig_risk, use_container_width=True)
+        st.markdown("---")
 
-with col2:
-    st.markdown("##### 🌍 Supplier Spend by Region")
-    region_map = {
-        "China": "Asia", "Japan": "Asia", "India": "Asia", "Vietnam": "Asia",
-        "USA": "Americas", "Canada": "Americas", "Mexico": "Americas",
-        "Germany": "Europe", "France": "Europe", "UK": "Europe", "Italy": "Europe"
-    }
-    df["Region"] = df["Country"].map(region_map).fillna("Other")
-    region_breakdown = df.groupby("Region")["Spend"].sum()
-    fig_donut = go.Figure(data=[go.Pie(
-        labels=region_breakdown.index,
-        values=region_breakdown.values,
-        hole=0.5,
-        textinfo='label+percent'
-    )])
-    fig_donut.update_layout(height=300, margin=dict(l=0, r=0, t=30, b=0))
-    st.plotly_chart(fig_donut, use_container_width=True)
+        # ---- RAW DATA (ONLY COLLAPSIBLE SECTION) ----
+        st.markdown("### 📂 Raw Supplier Data")
 
-with col3:
-    st.markdown("##### 🛡️ Mitigation Plan")
-    st.markdown("""
-    <div style="background-color:#f8f9fa; padding:1.5rem; border-radius:12px; color:#000; border:1px solid #ccc;">
-        <p><strong>🎯 Objective:</strong> Reduce single-source dependency</p>
-        <p><strong>📅 Timeline:</strong> 3 – 8 months</p>
-        <p><strong>👤 Owner:</strong> Supply Chain Manager</p>
-        <p><strong>📊 KPIs:</strong> Supplier mix, lead time, risk reduction</p>
-    </div>
-    """, unsafe_allow_html=True)
+        with st.expander("View Raw Supplier Data Table"):
+            st.dataframe(df)
 
-# ---- Upload Section Heading ----
-st.markdown("""
-<div style="background:#111111;padding:1.5rem;border-radius:10px;margin-top:2rem;">
-<h3 style='color:white;'>📂 Upload Your Data</h3>
-<p style='color:#ccc;'>Upload your <code>.csv</code> or <code>.xlsx</code> file and review your resilience profile instantly.</p>
-</div>
-""", unsafe_allow_html=True)
-st.markdown("📥 [Download Sample Template](https://yourwebsite.com/sample-template.xlsx)")
-
-# ---- Collapsible Raw Data Table ----
-with st.expander("📊 View Raw Supplier Data Table"):
-    st.dataframe(df)
-    st.download_button("📥 Download Full Data", data=df.to_csv(index=False), file_name="resililytics_output.csv", mime="text/csv")
-
+        st.download_button(
+            "📥 Download Full Dataset",
+            data=df.to_csv(index=False),
+            file_name="resililytics_output.csv",
+            mime="text/csv",
+        )
 # --------------- TAB 2: About ---------------
 with tab2:
     st.markdown("## 📖 Help & FAQ")
