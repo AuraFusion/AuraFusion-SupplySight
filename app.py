@@ -227,6 +227,9 @@ uploaded_file = st.file_uploader(
     type=['csv', 'xlsx'],
     key="secondary_upload"  # ✅ Different key
 )
+if uploaded_file is None:
+    st.info("📂 Upload a file to unlock dashboard analytics.")
+    st.stop()
 
 # ---- Collapsible Raw Data Table ----
 with st.expander("📊 View Raw Supplier Data Table"):
