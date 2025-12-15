@@ -211,6 +211,46 @@ alert_fig.update_layout(
     font=dict(color="white")
 )
 st.plotly_chart(alert_fig, use_container_width=True)
+# ----------- Monthly Alerts from Date + Logic -----------
+# Convert 'Date' to datetime safely
+if 'Date' in df.columns:
+    df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
+    df['Month'] = df['Date'].dt.strftime('%b')
+else:
+    df['Month'] = "Unknown"
+
+# Define logic-based alerts (volatility already exists)
+df['Risk_Alert'] = (
+    (df['Volatility'] > 0.5) |
+    (top_supplier_pct > 50)  # applies globally
+)
+
+# Group by month (from 'Date') for count of alerts
+monthly_alerts = (
+    df[df['Risk_Alert']]
+    .groupby('Month')
+    .size()
+    .reindex(["Jan", "Feb", "Mar", "Apr", "May", "Jun"], fill_value=0)
+)
+
+# Build chart
+months = monthly_alerts.index.tolist()
+alerts = monthly_alerts.values.tolist()
+
+# Plot it
+alert_fig = go.Figure(data=[
+    go.Bar(x=months, y=alerts, marker_color="#3399ff")
+])
+alert_fig.update_layout(
+    title="Monthly Risk Alerts",
+    xaxis_title="Month",
+    yaxis_title="Number of Alerts",
+    height=300,
+    paper_bgcolor="#0e1117",
+    plot_bgcolor="#0e1117",
+    font=dict(color="white")
+)
+st.plotly_chart(alert_fig, use_container_width=True)
 
 # ---- Second Row: Risk Insights, Supplier Diversification, Mitigation Plan ----
 st.markdown("### 📊 Risk Insights | 🌍 Supplier Diversification | 🛡️ Mitigation Plan")
