@@ -310,4 +310,3 @@ Data uploaded is processed temporarily and not stored.
 
 </div>
 """, unsafe_allow_html=True)
-
