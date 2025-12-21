@@ -254,7 +254,7 @@ with tab2:
 
   # ---------------------- HELP & FAQ SECTION ----------------------
 with tab2:
-st.markdown("## ❓ Help & FAQ")
+    st.markdown("## ❓ Help & FAQ")
 
 with st.expander("📂 What file types can I upload?"):
     st.markdown("""
