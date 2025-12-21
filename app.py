@@ -233,40 +233,40 @@ st.markdown("### 📂 Upload Your Data")
 st.markdown("""
 Upload your **.csv** or **.xlsx** file and review your resilience profile instantly.
 
-[📥 Download Sample Template](https://github.com/ResiliLytics/ResiliLytics-App/raw/41880325b28d159778df68a25b3d6ade9fc2aa61/sample%20supplier%20template.xlsx.csv)
+[ Download Sample Template](https://github.com/ResiliLytics/ResiliLytics-App/raw/41880325b28d159778df68a25b3d6ade9fc2aa61/sample%20supplier%20template.xlsx.csv)
 
 uploaded_file = st.file_uploader(
     "Choose a .csv or .xlsx file",
     type=['csv', 'xlsx'],
-    key="secondary_upload"  # ✅ Different key
+    key="secondary_upload"  #  Different key
 )
 if uploaded_file is None:
-    st.info("📂 Upload a file to unlock dashboard analytics.")
+    st.info(" Upload a file to unlock dashboard analytics.")
     st.stop()
 
 # ---- Collapsible Raw Data Table ----
-with st.expander("📊 View Raw Supplier Data Table"):
+with st.expander(" View Raw Supplier Data Table"):
     st.dataframe(df)
     st.download_button("📥 Download Full Data", data=df.to_csv(index=False), file_name="resililytics_output.csv", mime="text/csv")
 
 # --------------- TAB 2: About ---------------
 with tab2:
-    st.markdown("## 📖 Help & FAQ")
+    st.markdown("##  Help & FAQ")
 
-    st.markdown("### 🛠️ How It Works")
+    st.markdown("###  How It Works")
     
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("""
         <div style="background:#228be6; padding:1rem; border-radius:10px; color:white;">
-            <h4>📤 Upload Your File</h4>
+            <h4> Upload Your File</h4>
             Upload your CSV or Excel file with basic supplier data.
         </div>
         """, unsafe_allow_html=True)
     with col2:
         st.markdown("""
         <div style="background:#20c997; padding:1rem; border-radius:10px; color:white;">
-            <h4>📈 Analyze</h4>
+            <h4> Analyze</h4>
             Instantly see resilience scores, risks, and exposure metrics.
         </div>
         """, unsafe_allow_html=True)
@@ -275,28 +275,28 @@ with tab2:
     with col3:
         st.markdown("""
         <div style="background:#f76707; padding:1rem; border-radius:10px; color:white;">
-            <h4>💡 Get Recommendations</h4>
+            <h4> Get Recommendations</h4>
             View mitigation suggestions tailored to your results.
         </div>
         """, unsafe_allow_html=True)
     with col4:
         st.markdown("""
         <div style="background:#ae3ec9; padding:1rem; border-radius:10px; color:white;">
-            <h4>📄 Export or Explore</h4>
+            <h4> Export or Explore</h4>
             Download your report or try alternate data for comparison.
         </div>
         """, unsafe_allow_html=True)
 
     st.markdown("---")
-    st.markdown("### 📺 Learn More")
+    st.markdown("###  Learn More")
 
-    with st.expander("▶️ Watch Quick Tutorial Video"):
+    with st.expander(" Watch Quick Tutorial Video"):
         st.video("https://www.youtube.com/embed/YOUR_VIDEO_ID")  # Replace with real ID
 
-    with st.expander("📄 Download or View User Manual"):
+    with st.expander(" Download or View User Manual"):
         st.markdown("""
-        - 📥 [Download the Guide (PDF)](https://yourwebsite.com/resililytics-guide.pdf)
-        - 📘 [Open the Online Manual](https://yourwebsite.com/help-doc)
+        -  [Download the Guide (PDF)](https://yourwebsite.com/resililytics-guide.pdf)
+        -  [Open the Online Manual](https://yourwebsite.com/help-doc)
         """, unsafe_allow_html=True)
 
     st.markdown("---")
