@@ -53,6 +53,12 @@ st.markdown("""
 tab1, tab2, tab3 = st.tabs(["Dashboard", "Help & FAQ", "Contact"])
 
 # --------------- TAB 1: Dashboard ---------------
+# Upload Section (should come before you check for uploaded_file)
+uploaded_file = st.file_uploader("Choose a .csv or .xlsx file", type=["csv", "xlsx"], key="main_data_upload")
+if uploaded_file:
+    # Load data
+    df = pd.read_csv(uploaded_file) if uploaded_file.name.endswith('.csv') else pd.read_excel(uploaded_file)
+    # Do stuff with df
 if uploaded_file:
     df = pd.read_csv(uploaded_file) if uploaded_file.name.endswith('.csv') else pd.read_excel(uploaded_file)
 
