@@ -254,85 +254,53 @@ with tab2:
 
 # --------------- TAB 2: About ---------------
 with tab2:
-    st.markdown("## 📖 Help & FAQ")
+  # ---------------------- HELP & FAQ SECTION ----------------------
+st.markdown("## ❓ Help & FAQ")
 
-    st.markdown("### 🛠️ How It Works")
-    
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("""
-        <div style="background:#228be6; padding:1rem; border-radius:10px; color:white;">
-            <h4>📤 Upload Your File</h4>
-            Upload your CSV or Excel file with basic supplier data.
-        </div>
-        """, unsafe_allow_html=True)
-    with col2:
-        st.markdown("""
-        <div style="background:#20c997; padding:1rem; border-radius:10px; color:white;">
-            <h4>📈 Analyze</h4>
-            Instantly see resilience scores, risks, and exposure metrics.
-        </div>
-        """, unsafe_allow_html=True)
+with st.expander("📂 What file types can I upload?"):
+    st.markdown("""
+    You can upload `.csv` or `.xlsx` files. Use the [sample template](https://github.com/ResiliLytics/ResiliLytics-App/blob/41880325b28d159778df68a25b3d6ade9fc2aa61/sample%20supplier%20template.xlsx.csv) to structure your data correctly.
+    """)
 
-    col3, col4 = st.columns(2)
-    with col3:
-        st.markdown("""
-        <div style="background:#f76707; padding:1rem; border-radius:10px; color:white;">
-            <h4>💡 Get Recommendations</h4>
-            View mitigation suggestions tailored to your results.
-        </div>
-        """, unsafe_allow_html=True)
-    with col4:
-        st.markdown("""
-        <div style="background:#ae3ec9; padding:1rem; border-radius:10px; color:white;">
-            <h4>📄 Export or Explore</h4>
-            Download your report or try alternate data for comparison.
-        </div>
-        """, unsafe_allow_html=True)
+with st.expander("📊 How is the Resilience Score calculated?"):
+    st.markdown("""
+    The Resilience Score is calculated based on:
+    - **Supplier concentration** (how dependent you are on one supplier)
+    - **Geographic exposure** (how globally spread your suppliers are)
+    - **Cost volatility** (how much historical costs vary)
+    """)
 
-    st.markdown("---")
-    st.markdown("### 📺 Learn More")
+with st.expander("🛡️ What are Mitigation Plans?"):
+    st.markdown("""
+    Mitigation plans are AI-assisted recommendations generated based on your uploaded data. They help you proactively reduce supply chain risk.
+    """)
 
-    with st.expander("▶️ Watch Quick Tutorial Video"):
-        st.video("https://www.youtube.com/embed/YOUR_VIDEO_ID")  # Replace with real ID
+with st.expander("📤 Can I export the results?"):
+    st.markdown("""
+    Yes. Scroll down to download your full supplier data with risk scores as a `.csv` file.
+    """)
 
-    with st.expander("📄 Download or View User Manual"):
-        st.markdown("""
-        - 📥 [Download the Guide (PDF)](https://yourwebsite.com/resililytics-guide.pdf)
-        - 📘 [Open the Online Manual](https://yourwebsite.com/help-doc)
-        """, unsafe_allow_html=True)
-
-    st.markdown("---")
-    st.markdown("### ❓ Frequently Asked Questions")
-
-    with st.expander("What data do I need to use the app?"):
-        st.write("A simple file (CSV or Excel) with supplier names, spend, country, and historical cost values. You can download a template from the homepage.")
-
-    with st.expander("Is my data private?"):
-        st.write("Yes. This tool runs entirely in your browser session. Your data is not stored or shared.")
-
-    with st.expander("What happens after I upload my file?"):
-        st.write("The system calculates your resilience score, evaluates risk, and gives actionable mitigation suggestions — all instantly.")
-
-    with st.expander("How are resilience metrics calculated?"):
-        st.write("Visit the README on GitHub or scroll to the bottom of the app for a full breakdown of formulas and logic.")
-
-    st.markdown("---")
-    st.markdown("Still have questions? 👉 [**Contact Us Here**](https://resililytics-app.streamlit.app/#contact)")
-
+with st.expander("📩 What if I have a question or issue?"):
+    st.markdown("""
+    Reach out through the **Contact** section below. We are here to help!
+    """)
 # --------------- TAB 3: Contact ---------------
 with tab3:
-    st.markdown("## Contact Us")
-    st.markdown("Have feedback or want to collaborate? Fill out the form below.")
-    contact_form = """
-    <form action="https://formspree.io/f/xrbnaeqd" method="POST">
-        <label>Your email:<br><input type="email" name="email" style="width: 100%; padding: 8px;" required></label><br><br>
-        <label>Your message:<br><textarea name="message" rows="5" style="width: 100%; padding: 8px;" required></textarea></label><br>
-        <input type="text" name="_gotcha" style="display:none"> <!-- honeypot -->
-        <button type="submit" style="background-color:#228be6; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">Send</button>
-    </form>
-    """
-    st.markdown(contact_form, unsafe_allow_html=True)
+    st.markdown("---")
+st.markdown("## 📬 Contact")
+
+col1, col2 = st.columns([1, 2])
+
+with col1:
+    st.image("https://resililytics.com/favicon.png", width=80)
+
+with col2:
+    st.markdown("""
+    **ResiliLytics Support**  
+    📧 Email: [support@resililytics.com](mailto:support@resililytics.com)  
+    🌐 Website: [resililytics.com](https://resililytics.com)  
+    📘 GitHub: [ResiliLytics-App](https://github.com/ResiliLytics/ResiliLytics-App)
+    """)
 
 # ---- LEGAL & NON-COMMERCIAL USE DISCLAIMER ----
 st.markdown("""
