@@ -3,12 +3,11 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 
-st.set_page_config(layout="wide", page_title="ResiliLytics")
+st.set_page_config(page_title="ResiliLytics", layout="wide")
 
-# Styling + banner
+# --- Styling ---
 st.markdown("""
 <style>
-/* Scrolling banner styling */
 @keyframes scroll-left {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
@@ -39,10 +38,10 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ---- HEADER ----
+# --- Header ---
 st.markdown("""
 <div style='display: flex; align-items: center; background-color: #0e1117; padding: 1rem; border-radius: 10px; margin-bottom: 3rem;'>
-    <img src='https://github.com/ResiliLytics/ResiliLytics-assets/blob/d3dc6cd2011816b6fe359d1867b286f4e7b07fa4/Logo%204.png?raw=true' alt='ResiliLytics Logo' width='120' style='margin-right: 20px;'/>
+    <img src='https://github.com/ResiliLytics/ResiliLytics-assets/blob/d3dc6cd2011816b6fe359d1867b286f4e7b07fa4/Logo%204.png?raw=true' width='120' style='margin-right: 20px;'/>
     <div>
         <h1 style='color: #fdf6e3; font-size: 3.5rem; margin: 0;'>ResiliLytics Dashboard</h1>
         <h3 style='color: #e0e0e0; font-weight: 400; margin-top: -0.95rem;'>Sourcing Intelligence for Resilient Supply Chains</h3>
@@ -50,8 +49,8 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ---- TABS ----
-tab1, tab2, tab3 = st.tabs([" Dashboard", " Help & FAQ", " Contact"])
+# --- Tabs ---
+tab1, tab2, tab3 = st.tabs(["Dashboard", "Help & FAQ", "Contact"])
 
 # --------------- TAB 1: Dashboard ---------------
 with tab1:
