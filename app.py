@@ -151,18 +151,25 @@ st.markdown("### 📊 Risk Insights | 🌍 Supplier Diversification | 🛡️ Mi
 col1, col2, col3 = st.columns([1, 1, 1])
 
 with col1:
-    st.markdown("##### 📊 Monthly Risk Alerts (Demo)")
+   st.markdown("##### 📊 Risk Insights")
+if "Date" in df.columns:
+    df['Month'] = pd.to_datetime(df['Date']).dt.strftime('%b')
+    risk_data = df.groupby('Month')['Spend'].count().reindex(
+        ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    ).fillna(0).reset_index()
+else:
     risk_data = pd.DataFrame({
         "Month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-        "Alerts": [4, 6, 8, 11, 13, 14]
+        "Spend_Count": [5, 8, 6, 7, 10, 12]
     })
-    fig_risk = go.Figure(data=[go.Bar(
-        x=risk_data["Month"], 
-        y=risk_data["Alerts"], 
-        marker_color='#228be6'
-    )])
-    fig_risk.update_layout(height=300, margin=dict(l=0, r=0, t=30, b=0))
-    st.plotly_chart(fig_risk, use_container_width=True)
+
+fig_risk = go.Figure(data=[go.Bar(
+    x=risk_data["Month"], 
+    y=risk_data[risk_data.columns[1]], 
+    marker_color='#228be6'
+)])
+fig_risk.update_layout(height=300, margin=dict(l=0, r=0, t=30, b=0))
+st.plotly_chart(fig_risk, use_container_width=True)
 
 with col2:
     st.markdown("##### 🌍 Supplier Spend by Region")
