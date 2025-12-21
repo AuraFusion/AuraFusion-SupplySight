@@ -220,10 +220,10 @@ kpi = "Lower top supplier share, improved regional mix"
 
 mitigation_html = f"""
 <div style="background-color:#f8f9fa; padding:1.5rem; border-radius:12px; color:#000; border:1px solid #ccc;">
-    <p><strong>🎯 Objective:</strong> {objective}</p>
-    <p><strong>📅 Timeline:</strong> {timeline}</p>
-    <p><strong>👤 Owner:</strong> {owner}</p>
-    <p><strong>📊 KPIs:</strong> {kpi}</p>
+    <p><strong> Objective:</strong> {objective}</p>
+    <p><strong> Timeline:</strong> {timeline}</p>
+    <p><strong> Owner:</strong> {owner}</p>
+    <p><strong> KPIs:</strong> {kpi}</p>
 </div>
 """
 st.markdown(mitigation_html, unsafe_allow_html=True)
