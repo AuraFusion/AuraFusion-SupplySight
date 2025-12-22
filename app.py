@@ -346,7 +346,8 @@ with tab3:
     st.markdown(contact_form, unsafe_allow_html=True)
 
 # ---- LEGAL & NON-COMMERCIAL USE DISCLAIMER ----
-st.markdown("""
+st.markdown(
+"""
 <hr style='margin-top: 3rem; margin-bottom: 1rem;'>
 
 <div style='background-color: #121212; padding: 1.5rem 2rem; border-radius: 12px; border: 1px solid #333;'>
@@ -355,8 +356,9 @@ st.markdown("""
 
 <p style='color: #ddd; font-size: 0.95rem; line-height: 1.6;'>
 <strong>Disclaimer:</strong> This application is a non-commercial, research-focused prototype developed solely for academic and public-benefit purposes. It is intended to demonstrate a novel approach to SME supply chain resilience using AI and analytics.
+</p>
 
-The developer is not engaged in any commercial activity.
+<p style='color: #ddd; font-size: 0.95rem; line-height: 1.6;'>
 No services are sold or monetized through this platform.
 All uploaded data is used for live computation only and is not stored or retained.
 This tool is part of a public contribution portfolio used in support of a research project.
@@ -364,9 +366,11 @@ All content is provided “as is” without warranty of any kind.
 </p>
 
 <p style='color: #ddd; font-size: 0.95rem; line-height: 1.6;'>
-This application <strong>does not offer paid services</strong> and <strong>is not affiliated with any business entity</strong>. The developer is not engaged in commercial activity.
-Data uploaded is processed temporarily and not stored.
+This application <strong>does not offer paid services</strong> and <strong>is not affiliated with any business entity</strong>.
 </p>
 
 </div>
-""", unsafe_allow_html=True)True)
+""",
+unsafe_allow_html=True
+)
+
